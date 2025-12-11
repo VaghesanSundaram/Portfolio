@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eigenfaces Paper | Artifact | Vaghesan Sundaram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-logo"></span>
+        <span>
+          <span>Vaghesan Sundaram</span><br />
+          <span class="nav-subtitle">Cybersecurity & Mathematics</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Welcome</a>
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="video.html">Video</a>
+        <a href="reflective.html">Reflective Essay</a>
+        <a href="work.html" class="nav-cta">View artifacts</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <header class="page-heading">
+      <h1>Analysis and Implementation of Eigenfaces Method of Facial Recognition</h1>
+      <p>
+        A linear algebra based paper that builds and evaluates an eigenface based face recognition system using PCA, SVD, and Octave.
+      </p>
+    </header>
+
+    <section class="layout-split">
+      <article class="article">
+        <h2>Context and purpose</h2>
+        <p>
+          I wrote this paper for a high school linear algebra course to explore how eigenvalues and eigenvectors can be applied to a real problem: facial recognition.
+          Using images from the Chicago Face Database and my own face as a test case, I constructed a training matrix of faces, subtracted the mean image, and used singular value decomposition to compute eigenfaces that captured most of the variance in the dataset.
+          The paper walks through the data preparation steps, principal component selection, and implementation details in Octave, including how to project new faces into the eigenface space and classify them using Euclidean distance.
+        </p>
+        <p>
+          The purpose of this artifact was not only to implement a working system, but also to connect abstract linear algebra concepts to a concrete application.
+          I wanted readers to see how matrices, covariance, and decomposition techniques turn into a pipeline that can recognize faces under certain constraints, and to understand where the approach works well and where it struggles.
+        </p>
+
+        <h2>What this artifact reveals</h2>
+        <p>
+          This paper shows an early example of how I balance mathematical rigor with implementation details and reflection.
+          I explain why SVD is used instead of explicitly forming the covariance matrix, how principal components are chosen to capture a target percentage of variance, and how weight vectors are used to compare faces.
+          I also discuss limitations, such as sensitivity to lighting, alignment, and expression changes, and briefly compare eigenfaces to other methods like fisherfaces and modern machine learning approaches.
+        </p>
+        <p>
+          Looking back, this artifact marks a starting point for my interest in authentication and recognition systems.
+          It demonstrates perseverance in working through technical implementation challenges and an effort to communicate clearly to readers who may be familiar with linear algebra but not with computer vision.
+          The experience of writing and coding this project helped prepare me for later work in security and AI, where similar ideas about feature representation, distance metrics, and model limits continue to matter.
+        </p>
+      </article>
+
+      <aside class="sidebar-box">
+        <h2>Files</h2>
+        <p style="font-size:0.9rem;color:var(--muted);">
+          Use the link below to view the paper as a PDF.
+        </p>
+        <a
+          href="assets/artifacts/Eigenfaces.pdf"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Download eigenfaces paper (PDF)
+        </a>
+        <a href="work.html" class="btn btn-ghost" style="margin-top:0.75rem;">
+          Back to work page
+        </a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2025 Vaghesan Sundaram</span>
+    <span>Eigenfaces • Artifact</span>
+  </footer>
+</body>
+</html>

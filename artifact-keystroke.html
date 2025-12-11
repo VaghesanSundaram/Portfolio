@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Keystroke Dynamics Authentication | Artifact | Vaghesan Sundaram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-logo"></span>
+        <span>
+          <span>Vaghesan Sundaram</span><br />
+          <span class="nav-subtitle">Cybersecurity & Mathematics</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Welcome</a>
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="video.html">Video</a>
+        <a href="reflective.html">Reflective Essay</a>
+        <a href="work.html" class="nav-cta">View artifacts</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <header class="page-heading">
+      <h1>Keystroke Dynamics Authentication</h1>
+      <p>
+        A security project that uses behavioral biometrics, specifically typing patterns, as an additional signal for user authentication.
+      </p>
+    </header>
+
+    <section class="layout-split">
+      <article class="article">
+        <h2>Context and purpose</h2>
+        <p>
+          This project implements a keystroke dynamics based authentication system that collects timing features such as key hold times and flight times between keystrokes.
+          Using these features, I trained models that distinguish between legitimate users and impostors, experimenting with thresholds and classification approaches.
+          The work grew out of my interest in authentication mechanisms that do not rely solely on passwords, and it connects directly to my broader focus on applied security and user protection.
+        </p>
+        <p>
+          I designed the project to be reproducible and transparent.
+          That meant carefully structuring the data pipeline, documenting feature extraction, and providing clear evaluation metrics so that others could understand not only the model results, but also the limitations and possible attack surfaces.
+          As a result, the artifact functions both as an implementation and as a technical explanation of behavioral biometric authentication.
+        </p>
+
+        <h2>What this artifact reveals</h2>
+        <p>
+          This project demonstrates my curiosity about nontraditional authentication factors and my willingness to bridge theory and practice.
+          I had to understand the research literature on keystroke dynamics while also making pragmatic decisions about data collection, model selection, and usability tradeoffs.
+          It reveals how I think about security not just as cryptography, but as a human centered problem where false positives, false negatives, and user experience all matter.
+        </p>
+        <p>
+          The keystroke dynamics project also highlights my growth as a communicator.
+          I needed to explain to peers why timing data can be sensitive, how classification thresholds influence risk, and why behavioral biometrics should be layered with other factors rather than used on their own.
+          This kind of explanation practice will be critical in future roles where I need to articulate security risks and mitigations to both technical and nontechnical stakeholders.
+        </p>
+      </article>
+
+      <aside class="sidebar-box">
+        <h2>Links</h2>
+        <p style="font-size:0.9rem;color:var(--muted);">
+          Use the link below to view the keystroke dynamics authentication code and documentation.
+        </p>
+        <a
+          href="https://github.com/VaghesanSundaram/keystrokes-dynamics-authentication"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          View keystroke project on GitHub
+        </a>
+      </aside>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2025 Vaghesan Sundaram</span>
+    <span>Keystroke dynamics • Artifact</span>
+  </footer>
+</body>
+</html>

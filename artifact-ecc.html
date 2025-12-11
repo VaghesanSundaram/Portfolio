@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elliptic Curve Cryptography Paper | Artifact | Vaghesan Sundaram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-logo"></span>
+        <span>
+          <span>Vaghesan Sundaram</span><br />
+          <span class="nav-subtitle">Cybersecurity & Mathematics</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Welcome</a>
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="video.html">Video</a>
+        <a href="reflective.html">Reflective Essay</a>
+        <a href="work.html" class="nav-cta">View artifacts</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <header class="page-heading">
+      <h1>Elliptic Curve Cryptography</h1>
+      <p>
+        A discrete mathematics paper that introduces elliptic curves, point operations, and the Elliptic Curve Diffie Hellman key exchange, with discussion of security and future threats.
+      </p>
+    </header>
+
+    <section class="layout-split">
+      <article class="article">
+        <h2>Context and purpose</h2>
+        <p>
+          I wrote this paper for a high school discrete math course to explain how elliptic curve cryptography can be used to establish a shared secret between two parties.
+          Starting from the definition of elliptic curves and the basic point operations of negation, addition, doubling, and scalar multiplication, I built up to the notion of domain parameters over finite fields and the key exchange protocol.
+          The paper walks through how parties choose private keys, derive public keys by multiplying a generator point, and arrive at the same shared point on the curve without revealing their private scalars.
+        </p>
+        <p>
+          My purpose was to demystify ECC for readers who were comfortable with algebra but new to modern public key systems.
+          I chose to emphasize geometric intuition alongside modular arithmetic, and I framed the discussion around the hardness of the elliptic curve discrete logarithm problem.
+          I also briefly addressed the impact of quantum computing and concerns about backdoored curves, positioning ECC in a broader security landscape rather than treating it as a purely theoretical topic.
+        </p>
+
+        <h2>What this artifact reveals</h2>
+        <p>
+          This artifact reflects my early interest in cryptography and my desire to connect mathematical definitions to real security protocols.
+          It shows that I can explain a multi step algorithm with careful definitions, examples, and a clear narrative about why the scheme is believed to be secure.
+          The discussion section reveals my instinct to think beyond the textbook, considering quantum attacks and curve selection as part of the threat model.
+        </p>
+        <p>
+          In the context of this portfolio, the ECC paper bridges my mathematical training and my cybersecurity ambitions.
+          It demonstrates integrity and precision in explaining a protocol that underpins many real world systems, and it foreshadows the kind of work I hope to do in applied cryptography and vulnerability analysis.
+          The experience of writing this piece made it easier to approach more advanced security topics at UMD, since I already had practice turning formal definitions into accessible explanations.
+        </p>
+      </article>
+
+      <aside class="sidebar-box">
+        <h2>Files</h2>
+        <p style="font-size:0.9rem;color:var(--muted);">
+          Use the link below to view the paper as a PDF.
+        </p>
+        <a
+          href="assets/artifacts/Elliptic_Curve_Cryptography.pdf"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Download ECC paper (PDF)
+        </a>
+      </aside>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2025 Vaghesan Sundaram</span>
+    <span>ECC • Artifact</span>
+  </footer>
+</body>
+</html>
