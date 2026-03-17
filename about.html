@@ -1,54 +1,95 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>About | Vaghesan Sundaram</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body { font-family: Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+    .glass { background: rgba(15, 23, 42, 0.77); backdrop-filter: blur(10px); }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; padding: 0.55rem 1rem; font-weight: 600; font-size:0.875rem; line-height:1.25rem; transition: all .15s ease; text-decoration: none; }
+    .btn-primary { background: linear-gradient(135deg,#38bdf8,#0ea5e9); border:1px solid #38bdf8; color:#f8fafc; }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 15px rgba(14,165,233,.2); }
+    .btn-secondary { background: #334155; border:1px solid #475569; color:#cbd5e1; }
+    .btn-secondary:hover { background: #1e293b; border-color: #64748b; }
+    .btn-active { background: #0f172a; border:1px solid #334155; color:#a5f3fc; }
+    .nav-btn { color: #e2e8f0; }
+    .nav-btn:hover { color: #88cffa; }
+
+  </style>
 </head>
-<body>
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <span class="brand-badge" aria-hidden="true"></span>
-          <span class="brand-text">
-            <strong>Vaghesan Sundaram</strong>
-            <span>Cybersecurity and Mathematics | ACES</span>
-          </span>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <header class="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/90 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between py-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="h-10 w-10 rounded-lg bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-500"></span>
+          <div>
+            <p class="text-sm font-semibold text-slate-100">Vaghesan Sundaram</p>
+            <p class="text-xs text-slate-400">Cybersecurity & Mathematics | ACES</p>
+          </div>
         </a>
-        <div class="navlinks">
-          <a href="index.html">Home</a>
-<a href="projects.html">Projects</a>
-<a href="about.html" aria-current="page">About</a>
-<a href="resume.html">Resume</a>
-<a href="contact.html">Contact</a>
+        <div class="hidden sm:flex gap-3 text-sm text-slate-300">
+          <a href="index.html" class="btn nav-btn">Home</a>
+          <a href="projects.html" class="btn nav-btn">Projects</a>
+          <a href="certifications.html" class="btn nav-btn">Certifications</a>
+          <a href="about.html" class="btn btn-active nav-btn">About</a>
+          <a href="resume.html" class="btn nav-btn">Resume</a>
+          <a href="contact.html" class="btn nav-btn">Contact</a>
         </div>
+        <button class="sm:hidden p-2 text-slate-300 hover:text-cyan-300" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </nav>
+      <div id="mobile-nav" class="hidden sm:hidden border-t border-slate-800 py-3 flex flex-col gap-2 text-sm">
+        <a href="index.html" class="btn nav-btn">Home</a>
+        <a href="projects.html" class="btn nav-btn">Projects</a>
+        <a href="certifications.html" class="btn nav-btn">Certifications</a>
+        <a href="about.html" class="btn nav-btn">About</a>
+        <a href="resume.html" class="btn nav-btn">Resume</a>
+        <a href="contact.html" class="btn nav-btn">Contact</a>
+      </div>
     </div>
   </header>
 
-  <main class="main">
-    <div class="container">
-      
-<section class="card card-pad">
-  <div class="kicker">About</div>
-  <h1>About</h1>
-  <p>I am a Computer Science student in the cybersecurity track and a Mathematics major at the University of Maryland, graduating Spring 2027. I have experience with offensive security through CTF competitions and the NSA Codebreaker Challenge, as well as production IT work in a regulated environment.</p>
-  <p>My interests include vulnerability analysis, authentication systems, and understanding how real systems behave under attack. I am interested in roles that combine hands on technical work with security decision making.</p>
+  <main class="flex-1 px-4 py-10 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <article class="glass rounded-2xl p-6 sm:p-8">
+        <p class="text-xs uppercase tracking-wider text-cyan-300">About</p>
+        <h1 class="mt-2 text-3xl font-bold text-slate-100">About</h1>
+        <p class="mt-4 text-slate-300">I am a Computer Science student in the cybersecurity track and a Mathematics major at University of Maryland, graduating Spring 2027. I have hands-on experience in offensive security through CTF competitions and the NSA Codebreaker Challenge, plus production IT experience in a regulated environment (New Jersey Courts). I focus on vulnerability analysis, authentication systems, and secure engineering.</p>
 
-  <div class="hr"></div>
-  <h2>Skills</h2>
-  <p class="small">Nmap, Wireshark, Burp Suite, OpenSSL, Linux utilities, packet analysis, vulnerability assessment, incident response fundamentals, IAM and access control, TLS and PKI.</p>
-</section>
-
+        <div class="mt-6 border-t border-slate-800 pt-5">
+          <h2 class="text-xl font-medium text-slate-100">Technical Skills</h2>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-slate-800 p-4 text-sm text-slate-200">
+              <p class="font-semibold text-slate-100">Cybersecurity & Networking</p>
+              <p class="mt-1">Nmap, Wireshark, Burp Suite, OpenSSL, Linux utilities, packet analysis, vulnerability assessment</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 p-4 text-sm text-slate-200">
+              <p class="font-semibold text-slate-100">Programming & Scripting</p>
+              <p class="mt-1">Python, Java, C++, x86-64 Assembly, Rust, Bash, OCaml, SQL</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 p-4 text-sm text-slate-200">
+              <p class="font-semibold text-slate-100">Systems & Software</p>
+              <p class="mt-1">Linux, Windows, Git/GitHub, debugging, testing, documentation</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 p-4 text-sm text-slate-200">
+              <p class="font-semibold text-slate-100">ML / Data</p>
+              <p class="mt-1">PyTorch, NumPy, scikit-learn, Hugging Face, Matplotlib</p>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <span>Vaghesan Sundaram</span>
-    </div>
+  <footer class="border-t border-slate-800/50 bg-slate-950/90 py-6 text-center">
+    <div class="mx-auto max-w-6xl px-4 text-xs text-slate-500">© 2026 Vaghesan Sundaram • Built with Tailwind CSS</div>
   </footer>
 </body>
 </html>
