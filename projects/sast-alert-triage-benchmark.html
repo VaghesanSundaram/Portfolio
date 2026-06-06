@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Prophet | Vaghesan Sundaram</title>
+  <title>Static SAST Triage Agent Benchmark | Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../assets/css/style.css?v=20260603-nav" />
 </head>
@@ -46,11 +46,12 @@
     <section class="page-header">
       <div class="container">
         <p class="eyebrow">Project</p>
-        <h1>Prophet</h1>
-        <p class="lede">A HackPrinceton 2025 prediction market prototype combining Solana transactions, Python services, and external AI agents.</p>
+        <h1>Static SAST Triage Agent Benchmark</h1>
+        <p class="lede">A reproducible benchmark for model-assisted SAST alert triage, built from RealVuln scanner alerts, source evidence, schema validation, and deterministic scoring.</p>
         <div class="actions">
           <a class="button" href="../projects.html">Back to Projects</a>
-          <a class="button primary" href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">GitHub</a>
+          <a class="button primary" href="https://github.com/VaghesanSundaram/sast-alert-triage-benchmark" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="https://github.com/VaghesanSundaram/sast-alert-triage-benchmark/blob/main/final_writeup.pdf" target="_blank" rel="noopener">Public Writeup</a>
         </div>
       </div>
     </section>
@@ -59,25 +60,22 @@
       <div class="container hero-grid">
         <article>
           <h2>Overview</h2>
-          <p class="text-muted">Prophet is a decentralized prediction market prototype. Users create markets, place trades through smart contracts, and view aggregated forecasts supported by AI-assisted services.</p>
+          <p class="text-muted">The project packages 296 public RealVuln scanner-alert cases with copied source evidence for true-positive and false-positive triage. Cases are imported from scanner JSON rather than hand-written examples, and each active case records dataset provenance, upstream source repository metadata, scanner output source, and the deterministic matching rule used for expected verdicts.</p>
 
-          <h2>Approach</h2>
-          <p class="text-muted">Developed backend components that integrated Python services, external AI agents, and blockchain transactions. The implementation emphasized system design, data integrity, and practical coordination under a hackathon timeline.</p>
+          <h2>Methodology</h2>
+          <p class="text-muted">The benchmark builds a model-facing case bundle, validates schemas, runs hosted-model responses through a fixed response contract, and scores results with deterministic scripts. The release includes raw scanner outputs from Semgrep, Snyk, and SonarQube; review state for unmatched false positives; baseline runs; hosted-model outputs; score summaries; and run metadata.</p>
 
-          <h2>Security considerations</h2>
-          <ul class="dot-list">
-            <li>Threat modeling for user-submitted market data.</li>
-            <li>Clear trust boundaries between on-chain and off-chain components.</li>
-            <li>Failure handling for incomplete, stale, or adversarial input.</li>
-          </ul>
+          <h2>Results and limitations</h2>
+          <p class="text-muted">The checked-in results compare multiple OpenAI and Anthropic models on verdict accuracy, TP accuracy, FP accuracy, CWE accuracy, and severity accuracy. The README reports Claude Sonnet leading overall verdict accuracy in the included runs, while Claude Opus is strongest on the false-positive slice. The claim is intentionally bounded: this is a reproducible RealVuln public-data triage benchmark, not a broad production SAST benchmark or unseen-code generalization result.</p>
         </article>
 
-        <aside class="snapshot" aria-label="Project tools">
-          <p class="snapshot-title">Tools</p>
+        <aside class="snapshot" aria-label="Benchmark facts">
+          <p class="snapshot-title">Benchmark Facts</p>
           <ul class="clean-list">
-            <li><strong>Stack</strong><br />Python services, Solana, AI integration.</li>
-            <li><strong>Focus</strong><br />Backend components and data integrity.</li>
-            <li><strong>Context</strong><br />Fall HackPrinceton 2025.</li>
+            <li><strong>Cases</strong><br />296 RealVuln scanner alerts.</li>
+            <li><strong>Verdicts</strong><br />211 true positives and 85 false positives.</li>
+            <li><strong>Scanners</strong><br />Semgrep, Snyk, and SonarQube.</li>
+            <li><strong>Artifacts</strong><br />Schemas, runners, score summaries, run metadata, and public writeup.</li>
           </ul>
         </aside>
       </div>

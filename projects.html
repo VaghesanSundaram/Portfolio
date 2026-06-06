@@ -4,104 +4,132 @@
   <meta charset="utf-8" />
   <title>Projects | Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { color-scheme: dark; }
-    body { font-family: Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
-    .glass { background: rgba(15, 23, 42, 0.77); backdrop-filter: blur(10px); }
-
-    /* buttons */
-    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; padding: 0.55rem 1rem; font-weight: 600; font-size:0.875rem; line-height:1.25rem; transition: all .15s ease; text-decoration: none; }
-    .btn-primary { background: linear-gradient(135deg,#38bdf8,#0ea5e9); border:1px solid #38bdf8; color:#f8fafc; }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 15px rgba(14,165,233,.2); }
-    .btn-secondary { background: #334155; border:1px solid #475569; color:#cbd5e1; }
-    .btn-secondary:hover { background: #1e293b; border-color: #64748b; }
-    .btn-active { background: #0f172a; border:1px solid #334155; color:#a5f3fc; }
-    .nav-btn { color: #e2e8f0; }
-    .nav-btn:hover { color: #88cffa; }
-
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css?v=20260603-nav" />
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100">
-  <header class="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/90 backdrop-blur">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center justify-between py-4">
-        <a href="index.html" class="flex items-center gap-3">
-          <span class="h-10 w-10 rounded-lg bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-500"></span>
-          <div>
-            <p class="text-sm font-semibold text-slate-100">Vaghesan Sundaram</p>
-            <p class="text-xs text-slate-400">Cybersecurity & Mathematics | ACES</p>
-          </div>
-        </a>
-        <div class="hidden sm:flex gap-3 text-sm text-slate-300">
-          <a href="index.html" class="btn nav-btn">Home</a>
-          <a href="projects.html" class="btn btn-active nav-btn">Projects</a>
-          <a href="certifications.html" class="btn nav-btn">Certifications</a>
-          <a href="about.html" class="btn nav-btn">About</a>
-          <a href="resume.html" class="btn nav-btn">Resume</a>
-          <a href="contact.html" class="btn nav-btn">Contact</a>
-        </div>
-        <button class="sm:hidden p-2 text-slate-300 hover:text-cyan-300" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" aria-label="Toggle menu">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Vaghesan Sundaram home">
+        <span class="brand-mark">VS</span>
+        <span class="brand-copy">
+          <span class="brand-name">Vaghesan Sundaram</span>
+          <span class="brand-meta">Cybersecurity &amp; Mathematics | ACES</span>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html" aria-current="page">Projects</a>
+        <a class="nav-link" href="certifications.html">Certifications</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="resume.html">Resume</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
-      <div id="mobile-nav" class="hidden sm:hidden border-t border-slate-800 py-3 flex flex-col gap-2 text-sm">
-        <a href="index.html" class="btn nav-btn">Home</a>
-        <a href="projects.html" class="btn nav-btn">Projects</a>
-        <a href="certifications.html" class="btn nav-btn">Certifications</a>
-        <a href="about.html" class="btn nav-btn">About</a>
-        <a href="resume.html" class="btn nav-btn">Resume</a>
-        <a href="contact.html" class="btn nav-btn">Contact</a>
-      </div>
+      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="mobile-nav" aria-expanded="false" onclick="const nav=document.getElementById('mobile-nav'); const open=nav.hasAttribute('hidden'); nav.toggleAttribute('hidden'); this.setAttribute('aria-expanded', String(open));">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="container">
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html" aria-current="page">Projects</a>
+        <a class="nav-link" href="certifications.html">Certifications</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="resume.html">Resume</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="flex-1 px-4 py-10 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-6xl">
-      <section class="glass rounded-2xl p-6 sm:p-8">
-        <p class="text-xs uppercase tracking-wider text-cyan-300">Selected work</p>
-        <h1 class="mt-2 text-3xl font-bold text-slate-100">Projects</h1>
-        <p class="mt-3 text-slate-300">Projects aligned with cybersecurity, systems, and applied security engineering.</p>
-      </section>
+  <main class="page">
+    <section class="page-header">
+      <div class="container">
+        <p class="eyebrow">Selected work</p>
+        <h1>Projects</h1>
+        <p class="lede">Work across SAST alert triage, authentication, incident response, reverse engineering, network analysis, and secure systems.</p>
+      </div>
+    </section>
 
-      <section class="mt-6 grid gap-6 md:grid-cols-2">
-        <article class="glass rounded-2xl p-6">
-          <h2 class="text-xl font-semibold text-slate-100">Keystroke Dynamics Authentication</h2>
-          <p class="mt-2 text-sm text-cyan-300">Behavioral biometrics for user authentication</p>
-          <p class="mt-3 text-slate-300">Prototype analyzing typing timing for additional id verification, focusing on feature extraction, threshold tuning, and false accept/reject evaluation.</p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <a href="https://github.com/VaghesanSundaram/keystrokes-dynamics-authentication" target="_blank" rel="noopener" class="btn btn-primary">GitHub repo</a>
-            <a href="projects/keystroke-dynamics.html" class="btn btn-secondary">Project details</a>
+    <section class="section">
+      <div class="container card-grid">
+        <article class="card">
+          <p class="card-label">Security research</p>
+          <h2>Static SAST Triage Agent Benchmark</h2>
+          <p class="text-muted">Packaged 296 RealVuln scanner alerts and source evidence into a reproducible benchmark for true-positive and false-positive triage. The release uses Semgrep, Snyk, and SonarQube alerts, model-facing case bundles, deterministic scoring, and published hosted-model comparisons.</p>
+          <ul class="meta-row" aria-label="Research scope">
+            <li>Python</li>
+            <li>RealVuln</li>
+            <li>Semgrep</li>
+            <li>Snyk</li>
+            <li>SonarQube</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" href="projects/sast-alert-triage-benchmark.html">Project Details</a>
+            <a class="button" href="https://github.com/VaghesanSundaram/sast-alert-triage-benchmark" target="_blank" rel="noopener">GitHub Repo</a>
           </div>
         </article>
 
-        <article class="glass rounded-2xl p-6">
-          <h2 class="text-xl font-semibold text-slate-100">Prophet</h2>
-          <p class="mt-2 text-sm text-cyan-300">Decentralized prediction markets with AI forecasting</p>
-          <p class="mt-3 text-slate-300">HackPrinceton 2025 project integrating Solana-based prediction markets with AI services and threat-aware system design.</p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener" class="btn btn-primary">GitHub repo</a>
-            <a href="projects/prophet.html" class="btn btn-secondary">Project details</a>
+        <article class="card">
+          <p class="card-label">Behavioral biometrics</p>
+          <h2>Keystroke Dynamics Authentication</h2>
+          <p class="text-muted">Built a Python-based authentication prototype using typing behavior as a supplemental factor. The project covers feature extraction, anomaly detection, classification, and false accept/reject tradeoffs.</p>
+          <ul class="meta-row" aria-label="Tools">
+            <li>Python</li>
+            <li>scikit-learn</li>
+            <li>NumPy</li>
+            <li>Matplotlib</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" href="projects/keystroke-dynamics.html">Project Details</a>
+            <a class="button" href="https://github.com/VaghesanSundaram/keystrokes-dynamics-authentication" target="_blank" rel="noopener">GitHub Repo</a>
           </div>
         </article>
 
-        <article class="glass rounded-2xl p-6">
-          <h2 class="text-xl font-semibold text-slate-100">NSA Codebreaker Challenge</h2>
-          <p class="mt-2 text-sm text-cyan-300">CTF-style incident response & crypto</p>
-          <p class="mt-3 text-slate-300">Completed 2024 challenges and in-progress 2025; topics include cryptography, reverse engineering, and network forensics.</p>
+        <article class="card">
+          <p class="card-label">HackPrinceton 2025</p>
+          <h2>Prophet Prediction Market</h2>
+          <p class="text-muted">Developed backend components for an AI-driven prediction market on Solana, connecting Python services, external AI agents, and blockchain transactions with attention to data integrity.</p>
+          <ul class="meta-row" aria-label="Tools">
+            <li>Python</li>
+            <li>Solana</li>
+            <li>Backend services</li>
+            <li>AI integration</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" href="projects/prophet.html">Project Details</a>
+            <a class="button" href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">GitHub Repo</a>
+          </div>
         </article>
 
-        <article class="glass rounded-2xl p-6">
-          <h2 class="text-xl font-semibold text-slate-100">UMD CTF Team</h2>
-          <p class="mt-2 text-sm text-cyan-300">Vulnerability analysis and exploitation</p>
-          <p class="mt-3 text-slate-300">CSAW CTF qualifier participation with web, binary, and crypto exploitation driven by Python automation and reverse-engineering tooling.</p>
+        <article class="card">
+          <p class="card-label">Security challenges</p>
+          <h2>NSA Codebreaker Challenge 2024 and 2025</h2>
+          <p class="text-muted">Completed CTF-style tasks focused on incident response, reverse engineering, cryptography, and network analysis. Used Linux, scripting, debugging, and secure coding practices to analyze unfamiliar systems.</p>
+          <ul class="meta-row" aria-label="Focus areas">
+            <li>Reverse engineering</li>
+            <li>Cryptography</li>
+            <li>Network analysis</li>
+          </ul>
         </article>
-      </section>
-    </div>
+
+        <article class="card">
+          <p class="card-label">UMD CTF team</p>
+          <h2>Capture the Flag Competitions</h2>
+          <p class="text-muted">Participated in vulnerability analysis and exploitation challenges, including CSAW CTF Qualifications, using Python scripts, reverse engineering tools, and network forensics techniques.</p>
+          <ul class="meta-row" aria-label="Focus areas">
+            <li>Web</li>
+            <li>Binary</li>
+            <li>Crypto</li>
+            <li>Forensics</li>
+          </ul>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <footer class="border-t border-slate-800/50 bg-slate-950/90 py-6 text-center">
-    <div class="mx-auto max-w-6xl px-4 text-xs text-slate-500">© 2026 Vaghesan Sundaram • Built with Tailwind CSS</div>
+  <footer class="site-footer">
+    <div class="container">&copy; 2026 Vaghesan Sundaram</div>
   </footer>
 </body>
 </html>
