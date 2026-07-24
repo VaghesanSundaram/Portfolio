@@ -1,0 +1,39 @@
+\documentclass[10pt,letterpaper]{article}
+\makeatletter
+\def\input@path{{master_resumes/}{./}}
+\makeatother
+\input{resume_common.tex}
+
+\begin{document}
+\resumeheader
+
+\resumesection{Education}
+\educationblock
+
+\resumesection{Certification \& Technical Skills}
+\securityplus\\[1.5pt]
+\small
+\textbf{Languages:} Python, Java, C++ \\
+\textbf{Security:} Secure code review, vulnerability analysis, authentication review, evidence and severity triage, remediation reporting \\
+\textbf{Tools:} Semgrep, Wireshark, Linux, Git, PowerShell; Burp Suite and Nmap in controlled labs
+
+\resumesection{Experience}
+\redmindthree
+\njcourtstwo
+
+\resumesection{Selected Security Projects}
+\projectentry{Agent Least Privilege}{https://github.com/VaghesanSundaram/agent-least-privilege-public}{GitHub}
+\begin{itemize}
+  \resumeitem{Built a 60-cell synthetic tool-use evaluation with gpt-5.4-mini; task-conditioned enforcement blocked all observed unauthorized state-changing effects (0/10) versus 4/10 unrestricted and 6/10 with a static allowlist.}
+  \resumeitem{Found that enforcement prevented effects without eliminating model proposals: 5/10 monitored attack cases still contained an unauthorized proposed action.}
+\end{itemize}
+
+\projectentry{CTI Claim Provenance}{https://github.com/VaghesanSundaram/cti-claim-provenance-public}{GitHub}
+\begin{itemize}
+  \resumeitem{Built a 192-cell gpt-5.6-luna comparison of citation-prompted and constrained evidence-grounding pipelines over frozen vulnerability-source questions.}
+  \resumeitem{Measured a mixed result: evidence-binding improved from 83.3\% to 86.5\%, while strict canonical-answer matching declined from 33.3\% to 26.0\%.}
+\end{itemize}
+
+\keystrokeproject
+
+\end{document}

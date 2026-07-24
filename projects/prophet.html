@@ -2,90 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Prophet | Vaghesan Sundaram</title>
+  <title>Prophet Prediction Market | Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260603-nav" />
+  <meta name="description" content="The Python event-to-market pipeline behind Prophet: X ingestion, embedding-based clustering, Grok-assisted market generation, and WebSocket integration." />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="Prophet Prediction Market | Vaghesan Sundaram" />
+  <meta property="og:description" content="An event-to-market backend using sentence embeddings, KMeans, Grok, and WebSockets." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/prophet.html" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260724b" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
-    <div class="container nav-shell">
-      <a class="brand" href="../index.html" aria-label="Vaghesan Sundaram home">
-        <span class="brand-mark">VS</span>
-        <span class="brand-copy">
-          <span class="brand-name">Vaghesan Sundaram</span>
-          <span class="brand-meta">Cybersecurity &amp; Mathematics | ACES</span>
-        </span>
-      </a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link" href="../projects.html" aria-current="page">Projects</a>
-        <a class="nav-link" href="../certifications.html">Certifications</a>
-        <a class="nav-link" href="../about.html">About</a>
-        <a class="nav-link" href="../resume.html">Resume</a>
-        <a class="nav-link" href="../contact.html">Contact</a>
-      </nav>
-      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="mobile-nav" aria-expanded="false" onclick="const nav=document.getElementById('mobile-nav'); const open=nav.hasAttribute('hidden'); nav.toggleAttribute('hidden'); this.setAttribute('aria-expanded', String(open));">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
-        </svg>
-      </button>
-    </div>
-    <div class="container">
-      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link" href="../projects.html" aria-current="page">Projects</a>
-        <a class="nav-link" href="../certifications.html">Certifications</a>
-        <a class="nav-link" href="../about.html">About</a>
-        <a class="nav-link" href="../resume.html">Resume</a>
-        <a class="nav-link" href="../contact.html">Contact</a>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Vaghesan Sundaram</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../projects.html" aria-current="page">Projects</a>
+        <a href="../resume.html">Resume</a>
+        <a href="https://github.com/VaghesanSundaram" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/vaghesan-sundaram-a2b999231/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </header>
 
-  <main class="page">
+  <main id="main-content">
     <section class="page-header">
-      <div class="container">
-        <p class="eyebrow">Project</p>
-        <h1>Prophet</h1>
-        <p class="lede">A HackPrinceton 2025 prediction market prototype combining Solana transactions, Python services, and external AI agents.</p>
-        <div class="actions">
-          <a class="button" href="../projects.html">Back to Projects</a>
-          <a class="button primary" href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">GitHub</a>
-        </div>
+      <div class="container narrow">
+        <a class="breadcrumb" href="../projects.html">Projects</a>
+        <h1>Prophet Prediction Market</h1>
+        <p class="lede">An event-to-market backend that transformed recent posts from X into clustered signals, generated prediction-market definitions, and published structured actions to downstream services.</p>
+        <p class="link-row"><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">Repository</a><a href="../assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a></p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container hero-grid">
-        <article>
-          <h2>Overview</h2>
-          <p class="text-muted">Prophet is a decentralized prediction market prototype. Users create markets, place trades through smart contracts, and view aggregated forecasts supported by AI-assisted services.</p>
+      <article class="container narrow prose">
+        <h2>Overview</h2>
+        <p>Prophet is a HackPrinceton system for creating and operating AI-driven prediction markets from emerging events on X. I designed and implemented the Python path from raw social posts to actionable market events: ingestion, signal weighting, clustering, market generation, resolution checks, and service integration.</p>
 
-          <h2>Approach</h2>
-          <p class="text-muted">Developed backend components that integrated Python services, external AI agents, and blockchain transactions. The implementation emphasized system design, data integrity, and practical coordination under a hackathon timeline.</p>
+        <h2>Event-to-market pipeline</h2>
+        <p>I built the pipeline that normalized posts and engagement metadata, generated sentence embeddings, weighted signals by recency and engagement, and grouped related events with KMeans and cosine similarity. Qualifying clusters became candidate markets only after passing volume, weight, and suitability thresholds.</p>
+        <p>I integrated Grok calls that converted each cluster into a clear binary market question, estimated its initial probability, proposed a resolution time, and checked whether open markets had resolved. The engine emitted structured create and resolve actions over WebSockets.</p>
 
-          <h2>Security considerations</h2>
-          <ul class="dot-list">
-            <li>Threat modeling for user-submitted market data.</li>
-            <li>Clear trust boundaries between on-chain and off-chain components.</li>
-            <li>Failure handling for incomplete, stale, or adversarial input.</li>
-          </ul>
-        </article>
+        <h2>System integration</h2>
+        <p>I defined the boundary between the market engine and the rest of the system. Structured WebSocket actions let independently developed exchange, agent, and on-chain components consume market events without coupling those systems to the ingestion and clustering implementation.</p>
 
-        <aside class="snapshot" aria-label="Project tools">
-          <p class="snapshot-title">Tools</p>
-          <ul class="clean-list">
-            <li><strong>Stack</strong><br />Python services, Solana, AI integration.</li>
-            <li><strong>Focus</strong><br />Backend components and data integrity.</li>
-            <li><strong>Context</strong><br />Fall HackPrinceton 2025.</li>
-          </ul>
-        </aside>
-      </div>
+        <h2>Implementation notes</h2>
+        <ul>
+          <li>A rolling buffer, recency decay, and engagement weighting prioritized timely, higher-signal posts.</li>
+          <li>Sentence embeddings, cosine similarity, and KMeans connected new posts to existing markets or promoted sufficiently strong clusters.</li>
+          <li>Suitability checks filtered advertising, spam, explicit content, and events that had already concluded.</li>
+          <li>Structured create and resolve actions gave downstream services a stable integration contract.</li>
+        </ul>
+
+        <h2>Project details</h2>
+        <dl class="facts">
+          <div><dt>Language</dt><dd>Python</dd></div>
+          <div><dt>Signal processing</dt><dd>Sentence embeddings, cosine similarity, KMeans, and weighted event scoring</dd></div>
+          <div><dt>Market generation</dt><dd>Grok-assisted questions, probabilities, resolution times, and status checks</dd></div>
+          <div><dt>Integration</dt><dd>Flask engine service and structured WebSocket actions</dd></div>
+          <div><dt>Context</dt><dd>HackPrinceton 2025</dd></div>
+        </dl>
+      </article>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">&copy; 2026 Vaghesan Sundaram</div>
+    <div class="container footer-inner">
+      <p><a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a></p>
+      <p>&copy; 2026 Vaghesan Sundaram</p>
+    </div>
   </footer>
 </body>
 </html>

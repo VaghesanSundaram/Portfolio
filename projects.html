@@ -4,132 +4,82 @@
   <meta charset="utf-8" />
   <title>Projects | Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260603-nav" />
+  <meta name="description" content="Backend systems, authentication engineering, applied AI pipelines, and security projects by Vaghesan Sundaram." />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="Projects | Vaghesan Sundaram" />
+  <meta property="og:description" content="Backend systems, authentication engineering, applied AI pipelines, and security work." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects.html" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260724b" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
-    <div class="container nav-shell">
-      <a class="brand" href="index.html" aria-label="Vaghesan Sundaram home">
-        <span class="brand-mark">VS</span>
-        <span class="brand-copy">
-          <span class="brand-name">Vaghesan Sundaram</span>
-          <span class="brand-meta">Cybersecurity &amp; Mathematics | ACES</span>
-        </span>
-      </a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="projects.html" aria-current="page">Projects</a>
-        <a class="nav-link" href="certifications.html">Certifications</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="resume.html">Resume</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="mobile-nav" aria-expanded="false" onclick="const nav=document.getElementById('mobile-nav'); const open=nav.hasAttribute('hidden'); nav.toggleAttribute('hidden'); this.setAttribute('aria-expanded', String(open));">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
-        </svg>
-      </button>
-    </div>
-    <div class="container">
-      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="projects.html" aria-current="page">Projects</a>
-        <a class="nav-link" href="certifications.html">Certifications</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="resume.html">Resume</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Vaghesan Sundaram</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="https://github.com/VaghesanSundaram" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/vaghesan-sundaram-a2b999231/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </header>
 
-  <main class="page">
+  <main id="main-content">
     <section class="page-header">
       <div class="container">
-        <p class="eyebrow">Selected work</p>
         <h1>Projects</h1>
-        <p class="lede">Work across SAST alert triage, authentication, incident response, reverse engineering, network analysis, and secure systems.</p>
+        <p class="lede">Selected backend and security projects demonstrating system ownership, security controls, and integration across service boundaries.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container card-grid">
-        <article class="card">
-          <p class="card-label">Security research</p>
-          <h2>Static SAST Triage Agent Benchmark</h2>
-          <p class="text-muted">Packaged 296 RealVuln scanner alerts and source evidence into a reproducible benchmark for true-positive and false-positive triage. The release uses Semgrep, Snyk, and SonarQube alerts, model-facing case bundles, deterministic scoring, and published hosted-model comparisons.</p>
-          <ul class="meta-row" aria-label="Research scope">
-            <li>Python</li>
-            <li>RealVuln</li>
-            <li>Semgrep</li>
-            <li>Snyk</li>
-            <li>SonarQube</li>
-          </ul>
-          <div class="actions">
-            <a class="button primary" href="projects/sast-alert-triage-benchmark.html">Project Details</a>
-            <a class="button" href="https://github.com/VaghesanSundaram/sast-alert-triage-benchmark" target="_blank" rel="noopener">GitHub Repo</a>
+      <div class="container project-list">
+        <article class="project">
+          <div class="project-header">
+            <h2><a href="projects/agent-least-privilege.html">Agent Least Privilege</a></h2>
+            <span class="project-meta">Python, synthetic tool-use evaluation</span>
           </div>
+          <p>Designed a controlled 60-cell comparison of unrestricted execution, a static action allowlist, and a task-conditioned monitor for synthetic local tools. The monitor produced 0/10 unauthorized state-changing effects, compared with 4/10 under unrestricted execution and 6/10 under the static allowlist, while the model still proposed unauthorized actions in 5/10 monitored cases.</p>
+          <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege-public" target="_blank" rel="noopener">Repository</a></p>
         </article>
 
-        <article class="card">
-          <p class="card-label">Behavioral biometrics</p>
-          <h2>Keystroke Dynamics Authentication</h2>
-          <p class="text-muted">Built a Python-based authentication prototype using typing behavior as a supplemental factor. The project covers feature extraction, anomaly detection, classification, and false accept/reject tradeoffs.</p>
-          <ul class="meta-row" aria-label="Tools">
-            <li>Python</li>
-            <li>scikit-learn</li>
-            <li>NumPy</li>
-            <li>Matplotlib</li>
-          </ul>
-          <div class="actions">
-            <a class="button primary" href="projects/keystroke-dynamics.html">Project Details</a>
-            <a class="button" href="https://github.com/VaghesanSundaram/keystrokes-dynamics-authentication" target="_blank" rel="noopener">GitHub Repo</a>
+        <article class="project">
+          <div class="project-header">
+            <h2><a href="projects/cti-claim-provenance.html">CTI Claim Provenance</a></h2>
+            <span class="project-meta">Python, LLM evaluation, provenance</span>
           </div>
+          <p>Built a 192-cell comparison of citation-prompted and constrained evidence-grounding pipelines using gpt-5.6-luna and frozen vulnerability-source questions. The constrained pipeline improved evidence-binding from 83.3% to 86.5%, but strict canonical-answer matching declined from 33.3% to 26.0%, exposing a concrete evidence-selection versus answer-construction tradeoff.</p>
+          <p class="project-links"><a href="projects/cti-claim-provenance.html">Details</a><a href="https://github.com/VaghesanSundaram/cti-claim-provenance-public" target="_blank" rel="noopener">Repository</a></p>
         </article>
 
-        <article class="card">
-          <p class="card-label">HackPrinceton 2025</p>
-          <h2>Prophet Prediction Market</h2>
-          <p class="text-muted">Developed backend components for an AI-driven prediction market on Solana, connecting Python services, external AI agents, and blockchain transactions with attention to data integrity.</p>
-          <ul class="meta-row" aria-label="Tools">
-            <li>Python</li>
-            <li>Solana</li>
-            <li>Backend services</li>
-            <li>AI integration</li>
-          </ul>
-          <div class="actions">
-            <a class="button primary" href="projects/prophet.html">Project Details</a>
-            <a class="button" href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">GitHub Repo</a>
+        <article class="project">
+          <div class="project-header">
+            <h2><a href="projects/keystroke-dynamics.html">Keystroke Authentication</a></h2>
+            <span class="project-meta">Independent project</span>
           </div>
+          <p>Designed and built a reusable two-service authentication flow that adds typing cadence as a behavioral signal. The system combines SQLite persistence, JWT-bound requests, rate limiting, CSRF protection, single-use exchange codes, passphrase fallback, and an end-to-end verification path.</p>
+          <p class="project-links"><a href="projects/keystroke-dynamics.html">Details</a><a href="https://github.com/VaghesanSundaram/keystroke-auth" target="_blank" rel="noopener">Repository</a></p>
         </article>
 
-        <article class="card">
-          <p class="card-label">Security challenges</p>
-          <h2>NSA Codebreaker Challenge 2024 and 2025</h2>
-          <p class="text-muted">Completed CTF-style tasks focused on incident response, reverse engineering, cryptography, and network analysis. Used Linux, scripting, debugging, and secure coding practices to analyze unfamiliar systems.</p>
-          <ul class="meta-row" aria-label="Focus areas">
-            <li>Reverse engineering</li>
-            <li>Cryptography</li>
-            <li>Network analysis</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <p class="card-label">UMD CTF team</p>
-          <h2>Capture the Flag Competitions</h2>
-          <p class="text-muted">Participated in vulnerability analysis and exploitation challenges, including CSAW CTF Qualifications, using Python scripts, reverse engineering tools, and network forensics techniques.</p>
-          <ul class="meta-row" aria-label="Focus areas">
-            <li>Web</li>
-            <li>Binary</li>
-            <li>Crypto</li>
-            <li>Forensics</li>
-          </ul>
+        <article class="project">
+          <div class="project-header">
+            <h2><a href="projects/prophet.html">Prophet Prediction Market</a></h2>
+            <span class="project-meta">HackPrinceton 2025 / Python backend</span>
+          </div>
+          <p>Designed and implemented the Python event-to-market pipeline: ingesting recent posts from X, weighting and clustering related events, generating binary market questions and probability estimates with Grok, and emitting structured WebSocket actions for exchange and on-chain components.</p>
+          <p class="project-links"><a href="projects/prophet.html">Details</a><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">Repository</a></p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">&copy; 2026 Vaghesan Sundaram</div>
+    <div class="container footer-inner">
+      <p><a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a></p>
+      <p>&copy; 2026 Vaghesan Sundaram</p>
+    </div>
   </footer>
 </body>
 </html>

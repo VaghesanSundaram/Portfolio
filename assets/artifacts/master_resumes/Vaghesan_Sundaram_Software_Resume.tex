@@ -1,0 +1,36 @@
+\documentclass[10pt,letterpaper]{article}
+\makeatletter
+\def\input@path{{master_resumes/}{./}}
+\makeatother
+\input{resume_common.tex}
+
+\begin{document}
+\resumeheader
+
+\resumesection{Education}
+\educationblock
+
+\resumesection{Technical Skills}
+\small
+\textbf{Languages:} Python, Java, C++ \\
+\textbf{Technologies:} Flask, SQLite, NumPy, SciPy, scikit-learn, Git, Linux, PowerShell, REST APIs, JSON/JSON Schema, automated testing
+
+\resumesection{Selected Projects}
+\projectentry{Agent Least Privilege}{https://github.com/VaghesanSundaram/agent-least-privilege-public}{GitHub}
+\begin{itemize}
+  \resumeitem{Built a 60-cell synthetic tool-use evaluation with gpt-5.4-mini; a task-conditioned monitor prevented all observed unauthorized state-changing effects (0/10) versus 4/10 unrestricted and 6/10 with a static allowlist.}
+  \resumeitem{Separated model proposals from effects: the monitored model still proposed unauthorized actions in 5/10 attack cases, but the external monitor blocked each observed effect.}
+\end{itemize}
+
+\keystrokeproject
+
+\prophetproject
+
+\resumesection{Experience}
+\redmindtwo
+\njcourtstwo
+
+\resumesection{Certification}
+\securityplus
+
+\end{document}

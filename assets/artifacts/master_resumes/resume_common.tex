@@ -1,0 +1,113 @@
+\usepackage[margin=0.58in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}[Ligatures=NoCommon]
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+\XeTeXgenerateactualtext=1
+\AtBeginDocument{\fontsize{10.35pt}{12.15pt}\selectfont}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.02}
+\urlstyle{same}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=1.8pt,
+  topsep=2.4pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\resumesection}[1]{%
+  \vspace{6.2pt}%
+  {\large\bfseries #1}\par
+  \vspace{1.2pt}\hrule\vspace{3.4pt}%
+}
+
+\newcommand{\resumeheader}{%
+  \begin{center}
+    {\LARGE\bfseries Vaghesan Sundaram}\\[-0.5pt]
+    \small
+    \href{tel:+19172976785}{(917) 297-6785} $\mid$
+    \href{mailto:vaghesan2@gmail.com}{vaghesan2@gmail.com} $\mid$
+    \href{https://github.com/VaghesanSundaram}{GitHub} $\mid$
+    \href{https://www.linkedin.com/in/vaghesan-sundaram-a2b999231/}{LinkedIn} $\mid$
+    \href{https://vaghesansundaram.github.io/Portfolio/}{Portfolio}
+  \end{center}
+  \vspace{-5pt}
+}
+
+\newcommand{\twolineentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{#2} \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabularx}\vspace{-5pt}%
+}
+
+\newcommand{\projectentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \href{#2}{#3} \\
+  \end{tabularx}\vspace{-5pt}%
+}
+
+\newcommand{\resumeitem}[1]{\item \small #1}
+
+\newcommand{\educationblock}{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{University of Maryland, College Park} & \textbf{Expected Fall 2027} \\
+    B.S. Computer Science, Cybersecurity Focus; B.S. Mathematics; ACES Cybersecurity Minor & College Park, MD \\
+    \multicolumn{2}{@{}X@{}}{\small Relevant Coursework: Data Structures, Algorithms, Computer Systems, Statistics, Cryptography, Network Security, HACS408T Penetration Testing} \\
+    \textbf{Middlesex College} & \textbf{June 2024} \\
+    A.S. Mathematics & Edison, NJ \\
+  \end{tabularx}%
+}
+
+\newcommand{\securityplus}{%
+  \small \textbf{CompTIA Security+ (SY0-701)}, issued March 2026; expires March 2029.
+}
+
+\newcommand{\redmindtwo}{%
+  \twolineentry{Cybersecurity Intern}{Jun 2026 to Present}{Redmind Technologies}{Remote}
+  \begin{itemize}
+    \resumeitem{Assessed one public-facing client site with Semgrep and manual review; documented 7 findings across authentication, data exposure, configuration, and dependency risk.}
+    \resumeitem{Mapped evidence and severity decisions to remediation guidance, then presented a written report and slide deck to the developer team.}
+  \end{itemize}
+}
+
+\newcommand{\redmindthree}{%
+  \twolineentry{Cybersecurity Intern}{Jun 2026 to Present}{Redmind Technologies}{Remote}
+  \begin{itemize}
+    \resumeitem{Assessed one public-facing client site and documented 7 findings spanning data exposure, authentication flows, configuration, and dependency risk.}
+    \resumeitem{Combined Semgrep and manual review with evidence capture, severity triage, and remediation mapping to produce developer-facing guidance.}
+    \resumeitem{Presented the findings in a written report and slide deck to developers, explaining risk, evidence, and recommended fixes.}
+  \end{itemize}
+}
+
+\newcommand{\njcourtstwo}{%
+  \twolineentry{Information Technology Intern}{Jun to Aug 2025}{New Jersey Courts}{Toms River, NJ}
+  \begin{itemize}
+    \resumeitem{Supported production IT systems across court departments through troubleshooting, access workflows, user support, documentation, and escalation.}
+    \resumeitem{Documented recurring issues and support procedures for repeatable troubleshooting and clearer team handoffs.}
+  \end{itemize}
+}
+
+\newcommand{\keystrokeproject}{%
+  \projectentry{Keystroke Authentication System}{https://github.com/VaghesanSundaram/keystroke-auth}{GitHub}
+  \begin{itemize}
+    \resumeitem{Built a two-service Flask authentication system with SQLite persistence, typing-cadence validation, JWT-bound flows, bcrypt fallback, rate limiting, and single-use server-to-server code exchange.}
+    \resumeitem{Added an end-to-end smoke test covering account creation, three-sample enrollment, and authentication.}
+  \end{itemize}
+}
+
+\newcommand{\prophetproject}{%
+  \projectentry{Prophet Prediction Market}{https://github.com/shaanompatel/Prophet}{GitHub}
+  \begin{itemize}
+    \resumeitem{Built a Python event-to-market pipeline that normalized social posts, weighted signals by recency and engagement, clustered sentence embeddings, and generated candidate markets.}
+    \resumeitem{Defined structured WebSocket create/resolve actions that integrated the engine with independently developed exchange, agent, and on-chain services at HackPrinceton 2025.}
+  \end{itemize}
+}
