@@ -2,111 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Vaghesan Sundaram | Portfolio</title>
+  <title>Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260603-nav" />
+  <meta name="description" content="Backend software and security engineering projects by Vaghesan Sundaram, a Computer Science and Mathematics student at the University of Maryland." />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="Vaghesan Sundaram" />
+  <meta property="og:description" content="Backend systems, authentication engineering, applied AI pipelines, and security work." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260724b" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
-    <div class="container nav-shell">
-      <a class="brand" href="index.html" aria-label="Vaghesan Sundaram home">
-        <span class="brand-mark">VS</span>
-        <span class="brand-copy">
-          <span class="brand-name">Vaghesan Sundaram</span>
-          <span class="brand-meta">Cybersecurity &amp; Mathematics | ACES</span>
-        </span>
-      </a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html" aria-current="page">Home</a>
-        <a class="nav-link" href="projects.html">Projects</a>
-        <a class="nav-link" href="certifications.html">Certifications</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="resume.html">Resume</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="mobile-nav" aria-expanded="false" onclick="const nav=document.getElementById('mobile-nav'); const open=nav.hasAttribute('hidden'); nav.toggleAttribute('hidden'); this.setAttribute('aria-expanded', String(open));">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
-        </svg>
-      </button>
-    </div>
-    <div class="container">
-      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-        <a class="nav-link" href="index.html" aria-current="page">Home</a>
-        <a class="nav-link" href="projects.html">Projects</a>
-        <a class="nav-link" href="certifications.html">Certifications</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="resume.html">Resume</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Vaghesan Sundaram</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="https://github.com/VaghesanSundaram" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/vaghesan-sundaram-a2b999231/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </header>
 
-  <main class="page">
-    <section class="page-header">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Cybersecurity portfolio</p>
-          <h1>Vaghesan Sundaram</h1>
-          <p class="lede">Computer Science cybersecurity-track and Mathematics undergraduate at the University of Maryland, focused on offensive security, SAST alert triage, authentication systems, network analysis, and enterprise risk reduction.</p>
-          <ul class="dot-list">
-            <li>Hands-on CTF and NSA Codebreaker Challenge experience.</li>
-            <li>Built a reproducible SAST alert triage benchmark from RealVuln scanner evidence.</li>
-            <li>Production IT experience in a regulated public-sector environment.</li>
-            <li>CompTIA Security+ certified. Preparing for CompTIA CySA+ and PenTest+.</li>
-          </ul>
-          <div class="actions">
-            <a class="button primary" href="projects.html">View Projects</a>
-            <a class="button" href="resume.html">Resume</a>
-            <a class="button" href="contact.html">Contact</a>
-          </div>
+  <main id="main-content">
+    <section class="intro">
+      <div class="container">
+        <h1>Vaghesan Sundaram</h1>
+        <p class="lede">Computer Science and Mathematics student at the University of Maryland focused on backend software and security engineering. I build Python services, authentication systems, and data pipelines that connect real inputs to reliable system actions.</p>
+        <p class="meta">Expected graduation: Fall 2027. Based in College Park, Maryland.</p>
+        <div class="link-row">
+          <a class="button-link" href="assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+          <a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a>
         </div>
-        <aside class="snapshot" aria-label="Current highlights">
-          <p class="snapshot-title">Current Focus</p>
-          <ul class="clean-list">
-            <li><strong>Security+</strong><br />SY0-701, issued March 2026.</li>
-            <li><strong>Preparing for CompTIA CySA+ and PenTest+</strong><br />Security operations and penetration testing.</li>
-            <li><strong>SAST research</strong><br />296 RealVuln alerts from Semgrep, Snyk, and SonarQube.</li>
-            <li><strong>UMD ACES</strong><br />Cybersecurity minor, expected May 2027.</li>
-            <li><strong>Tools</strong><br />Nmap, Wireshark, Burp Suite, OpenSSL, Linux.</li>
-          </ul>
-        </aside>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="projects">
       <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Selected work</p>
-            <h2>Security-oriented projects</h2>
-          </div>
-          <a class="button" href="projects.html">All Projects</a>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <p class="card-label">SAST benchmark</p>
-            <h3>Static SAST Triage Agent Benchmark</h3>
-            <p class="text-muted">Reproducible benchmark packaging 296 RealVuln scanner alerts with source evidence, model-facing cases, and deterministic scoring for TP/FP triage.</p>
-            <div class="actions">
-              <a class="button primary" href="projects/sast-alert-triage-benchmark.html">Project Details</a>
+        <h2>Projects</h2>
+        <div class="project-list">
+          <article class="project">
+            <div class="project-header">
+              <h3><a href="projects/agent-least-privilege.html">Agent Least Privilege</a></h3>
+              <span class="project-meta">Python, synthetic tool-use evaluation</span>
             </div>
+            <p>Built a 60-cell evaluation of tool-use controls with gpt-5.4-mini. A task-conditioned monitor prevented all observed unauthorized state-changing effects (0/10), compared with 4/10 for unrestricted execution and 6/10 for a static allowlist; the model still proposed 5/10 unauthorized actions.</p>
+            <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege-public" target="_blank" rel="noopener">Repository</a></p>
           </article>
-          <article class="card">
-            <p class="card-label">Authentication</p>
-            <h3>Keystroke Dynamics Authentication</h3>
-            <p class="text-muted">Python prototype using behavioral biometrics, feature extraction, anomaly detection, and classification for supplemental authentication.</p>
-            <div class="actions">
-              <a class="button primary" href="projects/keystroke-dynamics.html">Project Details</a>
+
+          <article class="project">
+            <div class="project-header">
+              <h3><a href="projects/cti-claim-provenance.html">CTI Claim Provenance</a></h3>
+              <span class="project-meta">Python, LLM evaluation, provenance</span>
             </div>
+            <p>Built a 192-cell gpt-5.6-luna comparison of two evidence-grounding pipelines over frozen vulnerability-source questions. Constraints improved evidence-binding from 83.3% to 86.5%, while strict canonical-answer matching fell from 33.3% to 26.0%.</p>
+            <p class="project-links"><a href="projects/cti-claim-provenance.html">Details</a><a href="https://github.com/VaghesanSundaram/cti-claim-provenance-public" target="_blank" rel="noopener">Repository</a></p>
           </article>
-          <article class="card">
-            <p class="card-label">Security competitions</p>
-            <h3>NSA Codebreaker and CTFs</h3>
-            <p class="text-muted">Incident response, reverse engineering, cryptography, network analysis, and vulnerability analysis through competitive security work.</p>
-            <div class="actions">
-              <a class="button primary" href="projects.html">Read More</a>
+
+          <article class="project">
+            <div class="project-header">
+              <h3><a href="projects/keystroke-dynamics.html">Keystroke Authentication</a></h3>
+              <span class="project-meta">Flask, SQLite, JWT</span>
             </div>
+            <p>Designed and built a two-service authentication system that profiles typing cadence and verifies sign-ins, with SQLite persistence, JWT-bound service exchange, rate limiting, fallback authentication, and end-to-end validation.</p>
+            <p class="project-links"><a href="projects/keystroke-dynamics.html">Details</a><a href="https://github.com/VaghesanSundaram/keystroke-auth" target="_blank" rel="noopener">Repository</a></p>
+          </article>
+
+          <article class="project">
+            <div class="project-header">
+              <h3><a href="projects/prophet.html">Prophet Prediction Market</a></h3>
+              <span class="project-meta">Python, embeddings, WebSockets</span>
+            </div>
+            <p>Designed and implemented Prophet's Python event-to-market pipeline, transforming posts from X into clustered event signals, Grok-generated market questions and probability estimates, and WebSocket actions consumed by downstream exchange components.</p>
+            <p class="project-links"><a href="projects/prophet.html">Details</a><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">Repository</a></p>
           </article>
         </div>
       </div>
@@ -114,7 +84,10 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">&copy; 2026 Vaghesan Sundaram</div>
+    <div class="container footer-inner">
+      <p><a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a></p>
+      <p>&copy; 2026 Vaghesan Sundaram</p>
+    </div>
   </footer>
 </body>
 </html>
