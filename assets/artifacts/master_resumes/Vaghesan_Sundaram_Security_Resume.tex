@@ -4,6 +4,50 @@
 \makeatother
 \input{resume_common.tex}
 
+\geometry{margin=0.64in}
+\AtBeginDocument{\fontsize{10.8pt}{13.1pt}\selectfont}
+\renewcommand{\arraystretch}{1.08}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=2000
+\emergencystretch=2em
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=2.8pt,
+  topsep=3.4pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+\renewcommand{\resumesection}[1]{%
+  \vspace{7.5pt}%
+  {\large\bfseries #1}\par
+  \vspace{2pt}\hrule\vspace{4.5pt}%
+}
+\renewcommand{\twolineentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{#2} \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabularx}\vspace{-2pt}%
+}
+\renewcommand{\projectentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \href{#2}{#3} \\
+  \end{tabularx}\vspace{-2pt}%
+}
+\renewcommand{\resumeitem}[1]{\item \raggedright #1}
+\renewcommand{\educationblock}{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{University of Maryland, College Park} & \textbf{Expected Fall 2027} \\
+    B.S. Computer Science, Cybersecurity Focus; B.S. Mathematics; ACES Cybersecurity Minor & College Park, MD \\
+    \multicolumn{2}{@{}X@{}}{Relevant Coursework: Data Structures, Algorithms, Computer Systems, Statistics, Cryptography, Network Security, HACS408T Penetration Testing} \\
+    \textbf{Middlesex College} & \textbf{June 2024} \\
+    A.S. Mathematics & Edison, NJ \\
+  \end{tabularx}%
+}
+\renewcommand{\securityplus}{%
+  \textbf{CompTIA Security+ (SY0-701)}, issued March 2026; expires March 2029.
+}
+
 \begin{document}
 \resumeheader
 
@@ -12,26 +56,26 @@
 
 \resumesection{Certification \& Technical Skills}
 \securityplus\\[1.5pt]
-\small
-\textbf{Languages:} Python, Java, C++ \\
-\textbf{Security:} Secure code review, vulnerability analysis, authentication review, evidence and severity triage, remediation reporting \\
-\textbf{Tools:} Semgrep, Wireshark, Linux, Git, PowerShell; Burp Suite and Nmap in controlled labs
+\textbf{Languages:} Python, Java, C++, C, Assembly, Rust \\
+\textbf{Security:} Secure code review, vulnerability analysis, authentication and authorization review, evidence and severity triage, remediation reporting \\
+\textbf{Engineering:} Pydantic, pytest, Hypothesis, mypy, GitHub Actions, Flask, SQLite, Git, Linux \\
+\textbf{Tools:} Semgrep, Wireshark, PowerShell; Burp Suite and Nmap in controlled labs
 
 \resumesection{Experience}
 \redmindthree
 \njcourtstwo
 
-\resumesection{Selected Security Projects}
+\resumesection{Selected Projects}
 \projectentry{Agent Least Privilege}{https://github.com/VaghesanSundaram/agent-least-privilege}{GitHub}
 \begin{itemize}
-  \resumeitem{Built a 60-cell synthetic tool-use evaluation with gpt-5.4-mini; task-conditioned enforcement blocked all observed unauthorized state-changing effects (0/10) versus 4/10 unrestricted and 6/10 with a static allowlist.}
-  \resumeitem{Found that enforcement prevented effects without eliminating model proposals: 5/10 monitored attack cases still contained an unauthorized proposed action.}
+  \resumeitem{Built a Python/Pydantic default-deny authorization monitor to bind tool calls to task-scoped functions, resources, arguments, approvals, and call limits, with append-only audit events and deterministic replay.}
+  \resumeitem{Validated it with 93 tests, Hypothesis property checks, strict mypy, and Windows/Linux CI; in 60 episodes, task-conditioned enforcement produced 0/10 unauthorized state-changing effects versus 4/10 unrestricted and 6/10 with an allowlist.}
 \end{itemize}
 
 \projectentry{CTI Claim Provenance}{https://github.com/VaghesanSundaram/cti-claim-provenance}{GitHub}
 \begin{itemize}
-  \resumeitem{Built a 192-cell gpt-5.6-luna comparison of citation-prompted and constrained evidence-grounding pipelines over frozen vulnerability-source questions.}
-  \resumeitem{Measured a mixed result: evidence-binding improved from 83.3\% to 86.5\%, while strict canonical-answer matching declined from 33.3\% to 26.0\%.}
+  \resumeitem{Designed a 64-question point-in-time CTI benchmark across 24 dependency groups with cutoff and authority rules, source hashes, typed expected answers, abstention cases, human review, and split isolation.}
+  \resumeitem{Published a privacy-safe 192-cell comparison; constraints raised evidence binding from 83.3\% to 86.5\% but reduced exact-answer matching from 33.3\% to 26.0\%, separating evidence selection from answer construction.}
 \end{itemize}
 
 \keystrokeproject

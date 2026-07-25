@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <title>Agent Least Privilege | Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A controlled evaluation of task-conditioned tool-use monitoring for synthetic local tools." />
+  <meta name="description" content="A default-deny Python authorization monitor and 60-episode evaluation for tool-using agents." />
   <meta name="theme-color" content="#ffffff" />
   <meta property="og:title" content="Agent Least Privilege | Vaghesan Sundaram" />
-  <meta property="og:description" content="A 60-cell synthetic tool-use evaluation of least-privilege enforcement." />
+  <meta property="og:description" content="Task-scoped authorization, audit replay, 93 tests, and a controlled least-privilege evaluation." />
   <meta property="og:type" content="article" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/agent-least-privilege.html" />
   <link rel="stylesheet" href="../assets/css/style.css?v=20260724b" />
@@ -31,7 +31,7 @@
       <div class="container narrow">
         <a class="breadcrumb" href="../projects.html">Projects</a>
         <h1>Agent Least Privilege</h1>
-        <p class="lede">A controlled synthetic tool-use evaluation of whether task-conditioned monitoring can prevent unauthorized state-changing effects without relying on a coarse action allowlist.</p>
+        <p class="lede">A default-deny Python authorization monitor that binds tool calls to the functions, resources, arguments, approvals, and call limits of the owner task.</p>
         <p class="link-row"><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a><a href="../assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a></p>
       </div>
     </section>
@@ -41,8 +41,17 @@
         <h2>Question</h2>
         <p>Can an external monitor limit a tool-using model to the resources, arguments, approvals, and action budget of the owner task? The project evaluates the enforcement layer; it does not claim that a model itself became safer.</p>
 
+        <h2>Engineering highlights</h2>
+        <ul>
+          <li>Typed policy and event contracts built with Python 3.12 and Pydantic.</li>
+          <li>Task-scoped checks for functions, resources, arguments, approvals, and call counts.</li>
+          <li>Append-only audit events and deterministic state replay across synthetic services.</li>
+          <li>93 automated tests, including Hypothesis property checks, with strict mypy and Ruff checks.</li>
+          <li>Continuous integration on Windows and Linux, plus checked-in results and an offline verifier.</li>
+        </ul>
+
         <h2>Method</h2>
-        <p>I created synthetic local-tool scenarios covering resource substitution, argument or destination substitution, approval laundering, call-count misuse, and cross-tool privilege chaining. The same task fixtures were evaluated with gpt-5.4-mini under unrestricted execution, a static action allowlist, and task-conditioned enforcement. The 60 completed cells are a small, controlled evaluation rather than a population estimate.</p>
+        <p>I implemented a policy evaluator, synthetic mail, file, ticket, and payment services, append-only audit events, deterministic replay, and evaluation fixtures for resource substitution, argument or destination substitution, approval laundering, call-count misuse, and cross-tool privilege chaining. The same fixtures were evaluated with gpt-5.4-mini under unrestricted execution, a static action allowlist, and task-conditioned enforcement. The 60 completed episodes are a small controlled evaluation, not a population estimate.</p>
 
         <h2>Observed result</h2>
         <div class="table-wrap">
@@ -58,14 +67,18 @@
         </div>
         <p>Under task-conditioned enforcement, the model still proposed unauthorized actions in 5 of 10 attack cases, but the monitor prevented every observed state-changing effect. That distinction is the central result: proposal behavior and enforcement behavior are measured separately.</p>
 
+        <h2>What the public release contains</h2>
+        <p>The public release includes the authorization core, synthetic services, automated tests, checked-in results, and offline verification. The verifier checks the published artifacts; it does not call a model provider or reproduce the original generation run.</p>
+
         <h2>Limits</h2>
-        <p>The evaluation uses synthetic tools, one primary model, ten attack cases, and one trial per cell. It supports a narrow claim about this monitor in these fixtures—not a claim about real-world attack rates, general model safety, or all unauthorized reads.</p>
+        <p>The evaluation uses synthetic tools, one primary model, ten attack cases, and one trial per cell. It supports a narrow claim about this monitor in these fixtures, not a claim about real-world attack rates, general model safety, or all unauthorized reads.</p>
 
         <h2>Project details</h2>
         <dl class="facts">
-          <div><dt>Language</dt><dd>Python</dd></div>
-          <div><dt>Model</dt><dd>gpt-5.4-mini</dd></div>
-          <div><dt>Evaluation</dt><dd>60 completed cells</dd></div>
+          <div><dt>Language</dt><dd>Python 3.12</dd></div>
+          <div><dt>Core libraries</dt><dd>Pydantic, pytest, Hypothesis</dd></div>
+          <div><dt>Verification</dt><dd>93 tests, strict mypy and Ruff, Windows/Linux CI</dd></div>
+          <div><dt>Evaluation</dt><dd>60 completed episodes</dd></div>
           <div><dt>Primary measure</dt><dd>Unauthorized state-changing effects</dd></div>
         </dl>
       </article>

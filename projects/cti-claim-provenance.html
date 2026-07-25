@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <title>CTI Claim Provenance | Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A controlled comparison of evidence-grounding pipelines for vulnerability-source questions." />
+  <meta name="description" content="A 64-question point-in-time CTI benchmark with reviewed evidence, source hashes, and a privacy-safe 192-cell result bundle." />
   <meta name="theme-color" content="#ffffff" />
   <meta property="og:title" content="CTI Claim Provenance | Vaghesan Sundaram" />
-  <meta property="og:description" content="A 192-cell LLM evaluation of evidence-binding and answer construction." />
+  <meta property="og:description" content="A reproducible CTI benchmark for separating evidence binding from exact answer construction." />
   <meta property="og:type" content="article" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/cti-claim-provenance.html" />
   <link rel="stylesheet" href="../assets/css/style.css?v=20260724b" />
@@ -31,7 +31,7 @@
       <div class="container narrow">
         <a class="breadcrumb" href="../projects.html">Projects</a>
         <h1>CTI Claim Provenance</h1>
-        <p class="lede">A controlled comparison of two pipelines for answering vulnerability-source questions with traceable supporting evidence.</p>
+        <p class="lede">A point-in-time cyber threat intelligence benchmark for testing whether model answers bind to the correct source evidence and construct the expected temporal answer.</p>
         <p class="link-row"><a href="https://github.com/VaghesanSundaram/cti-claim-provenance" target="_blank" rel="noopener">Repository</a><a href="../assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a></p>
       </div>
     </section>
@@ -41,8 +41,17 @@
         <h2>Question</h2>
         <p>Do explicit provenance constraints help a model bind an answer to the right frozen source evidence, and do they also improve the exact structured answer? The project keeps those outcomes separate.</p>
 
+        <h2>Engineering highlights</h2>
+        <ul>
+          <li>64 reviewed questions organized into 24 dependency groups.</li>
+          <li>Point-in-time cutoff and source-authority rules with evidence spans and source hashes.</li>
+          <li>Typed expected answers, including explicit abstention cases.</li>
+          <li>Group-aware split isolation and a documented human-review record.</li>
+          <li>A privacy-safe 192-row result projection and offline release verifier.</li>
+        </ul>
+
         <h2>Method</h2>
-        <p>I built a 192-cell comparison with gpt-5.6-luna using frozen vulnerability-source questions. Each question was evaluated under a citation-prompted baseline and a constrained pipeline, then scored separately for evidence-binding and strict canonical-answer matching. The corpus includes related question families, so results are summarized as a controlled comparison rather than independent factual samples.</p>
+        <p>I designed the benchmark schema, related question families, cutoff and authority rules, evidence packets, typed expected-answer format, abstention cases, review record, split constraints, privacy-safe result projection, aggregate checks, and release verifier. Each question was evaluated with gpt-5.6-luna under a citation-prompted baseline and a constrained pipeline, then scored separately for evidence binding and strict canonical-answer matching.</p>
 
         <h2>Observed result</h2>
         <div class="table-wrap">
@@ -57,15 +66,19 @@
         </div>
         <p>The constrained pipeline had a small gain in selecting and binding the relevant evidence, particularly on temporal questions, but it did not produce a broad accuracy gain: exact canonical-answer matching declined. The result is a tradeoff between evidence selection and answer construction, not proof that either pipeline is generally more accurate.</p>
 
+        <h2>What the public release contains</h2>
+        <p>The public repository contains the reviewed benchmark corpus, evidence packets, human-review record, privacy-safe result projection, and release verifier. It does not include the original provider-run collection and generation pipeline, so the release supports inspection of the benchmark design and verification of the published aggregates rather than a full rerun of the model experiment.</p>
+
         <h2>Limits</h2>
         <p>This is one model, one frozen corpus, and one run per cell. Question families share source dependencies, so the cells are not independent observations. The reported percentages should not be treated as significance-tested or causal estimates.</p>
 
         <h2>Project details</h2>
         <dl class="facts">
           <div><dt>Language</dt><dd>Python</dd></div>
-          <div><dt>Model</dt><dd>gpt-5.6-luna</dd></div>
+          <div><dt>Corpus</dt><dd>64 questions in 24 dependency groups</dd></div>
           <div><dt>Evaluation</dt><dd>192 completed cells</dd></div>
-          <div><dt>Measures</dt><dd>Evidence-binding and strict answer match</dd></div>
+          <div><dt>Release checks</dt><dd>Corpus, splits, documentation, privacy, and aggregates</dd></div>
+          <div><dt>Measures</dt><dd>Evidence binding and strict answer match</dd></div>
         </dl>
       </article>
     </section>
