@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <title>Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Backend software and security engineering projects by Vaghesan Sundaram, a Computer Science and Mathematics student at the University of Maryland." />
+  <meta name="description" content="Security engineering and backend Python projects by Vaghesan Sundaram, a Computer Science and Mathematics student at the University of Maryland." />
   <meta name="theme-color" content="#ffffff" />
   <meta property="og:title" content="Vaghesan Sundaram" />
-  <meta property="og:description" content="Backend systems, authentication engineering, applied AI pipelines, and security work." />
+  <meta property="og:description" content="Security engineering, backend software, authorization, authentication, and reproducible evaluation." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/" />
   <link rel="stylesheet" href="assets/css/style.css?v=20260724b" />
@@ -30,8 +30,8 @@
     <section class="intro">
       <div class="container">
         <h1>Vaghesan Sundaram</h1>
-        <p class="lede">Computer Science and Mathematics student at the University of Maryland focused on backend software and security engineering. I build Python services, authentication systems, and data pipelines that connect real inputs to reliable system actions.</p>
-        <p class="meta">Expected graduation: Fall 2027. Based in College Park, Maryland.</p>
+        <p class="lede">Computer Science and Mathematics student at the University of Maryland building Python systems across security engineering and backend software. My work spans application security, authorization, authentication, vulnerability analysis, and reproducible evaluation.</p>
+        <p class="meta">CompTIA Security+ certified. Expected graduation: Fall 2027. Based in College Park, Maryland.</p>
         <div class="link-row">
           <a class="button-link" href="assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
           <a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a>
@@ -46,25 +46,22 @@
           <article class="project">
             <div class="project-header">
               <h3><a href="projects/agent-least-privilege.html">Agent Least Privilege</a></h3>
-              <span class="project-meta">Python, synthetic tool-use evaluation</span>
             </div>
-            <p>Built a 60-cell evaluation of tool-use controls with gpt-5.4-mini. A task-conditioned monitor prevented all observed unauthorized state-changing effects (0/10), compared with 4/10 for unrestricted execution and 6/10 for a static allowlist; the model still proposed 5/10 unauthorized actions.</p>
+            <p>Built a default-deny Python authorization layer for tool-using agents, with typed task policies, resource and argument constraints, audit logging, deterministic replay, and 93 automated tests. In a 60-episode synthetic evaluation, task-conditioned enforcement produced 0/10 unauthorized state-changing effects.</p>
             <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a></p>
           </article>
 
           <article class="project">
             <div class="project-header">
               <h3><a href="projects/cti-claim-provenance.html">CTI Claim Provenance</a></h3>
-              <span class="project-meta">Python, LLM evaluation, provenance</span>
             </div>
-            <p>Built a 192-cell gpt-5.6-luna comparison of two evidence-grounding pipelines over frozen vulnerability-source questions. Constraints improved evidence-binding from 83.3% to 86.5%, while strict canonical-answer matching fell from 33.3% to 26.0%.</p>
+            <p>Designed a 64-question point-in-time CTI benchmark across 24 dependency groups, with cutoff-aware evidence, authority rules, human review, source hashes, and a reproducible 192-cell result bundle. Constrained output improved evidence binding slightly but reduced exact-answer matching.</p>
             <p class="project-links"><a href="projects/cti-claim-provenance.html">Details</a><a href="https://github.com/VaghesanSundaram/cti-claim-provenance" target="_blank" rel="noopener">Repository</a></p>
           </article>
 
           <article class="project">
             <div class="project-header">
               <h3><a href="projects/keystroke-dynamics.html">Keystroke Authentication</a></h3>
-              <span class="project-meta">Flask, SQLite, JWT</span>
             </div>
             <p>Designed and built a two-service authentication system that profiles typing cadence and verifies sign-ins, with SQLite persistence, JWT-bound service exchange, rate limiting, fallback authentication, and end-to-end validation.</p>
             <p class="project-links"><a href="projects/keystroke-dynamics.html">Details</a><a href="https://github.com/VaghesanSundaram/keystroke-auth" target="_blank" rel="noopener">Repository</a></p>
@@ -73,7 +70,6 @@
           <article class="project">
             <div class="project-header">
               <h3><a href="projects/prophet.html">Prophet Prediction Market</a></h3>
-              <span class="project-meta">Python, embeddings, WebSockets</span>
             </div>
             <p>Designed and implemented Prophet's Python event-to-market pipeline, transforming posts from X into clustered event signals, Grok-generated market questions and probability estimates, and WebSocket actions consumed by downstream exchange components.</p>
             <p class="project-links"><a href="projects/prophet.html">Details</a><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">Repository</a></p>
