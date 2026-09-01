@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <title>Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Security engineering and backend Python projects by Vaghesan Sundaram, a Computer Science and Mathematics student at the University of Maryland." />
+  <meta name="description" content="Cybersecurity, robot-policy evaluation, and backend Python work by Vaghesan Sundaram, a Computer Science and Mathematics student at the University of Maryland." />
   <meta name="theme-color" content="#ffffff" />
   <meta property="og:title" content="Vaghesan Sundaram" />
-  <meta property="og:description" content="Security engineering, backend software, authorization, authentication, and reproducible evaluation." />
+  <meta property="og:description" content="Application security, least-privilege authorization, cyber threat intelligence, authentication, and robot-policy evaluation." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260724b" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260805a" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -30,11 +30,41 @@
     <section class="intro">
       <div class="container">
         <h1>Vaghesan Sundaram</h1>
-        <p class="lede">Computer Science and Mathematics student at the University of Maryland building Python systems across security engineering and backend software. My work spans application security, authorization, authentication, vulnerability analysis, and reproducible evaluation.</p>
-        <p class="meta">CompTIA Security+ certified. Expected graduation: Fall 2027. Based in College Park, Maryland.</p>
+        <p class="lede">Cybersecurity intern and Computer Science and Mathematics student at the University of Maryland building Python systems across application security, least-privilege authorization, cyber threat intelligence, authentication, and robot-policy evaluation.</p>
+        <p class="meta">CompTIA Security+ certified. U.S. citizen. Expected graduation: December 2027. Based in College Park, Maryland.</p>
         <div class="link-row">
           <a class="button-link" href="assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
           <a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="experience-list">
+          <article class="experience">
+            <div class="entry-header">
+              <div><h3>Cybersecurity Intern</h3><p class="entry-organization">Redmind Technologies</p></div>
+              <p class="entry-meta">June 2026 - Present | Remote</p>
+            </div>
+            <ul class="resume-bullets">
+              <li>Identified and documented 7 reproducible findings across authentication, data exposure, configuration, and dependency risk by combining Semgrep SAST with manual secure code review of a public-facing client application.</li>
+              <li>Delivered a developer-facing report and slide briefing that validated evidence, prioritized all 7 findings by severity, and mapped each issue to actionable remediation guidance for developer implementation and client review.</li>
+              <li>Developing a PyTorch pipeline with MuJoCo, robosuite, robomimic, and LeRobot to measure training-data and reward-label poisoning across behavior cloning, transformer, VLA, and offline RL policies.</li>
+            </ul>
+          </article>
+
+          <article class="experience">
+            <div class="entry-header">
+              <div><h3>Information Technology Intern</h3><p class="entry-organization">New Jersey Courts</p></div>
+              <p class="entry-meta">June 2025 - August 2025 | Toms River, New Jersey</p>
+            </div>
+            <ul class="resume-bullets">
+              <li>Installed courtroom recording hardware to capture legal proceedings and support court recordkeeping.</li>
+              <li>Improved IT asset inventory accuracy across 5 departments (Finance, IT, Civil, Probation, and Operations) by cataloging devices and reconciling physical equipment with tracking records for asset control.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -47,7 +77,7 @@
             <div class="project-header">
               <h3><a href="projects/agent-least-privilege.html">Agent Least Privilege</a></h3>
             </div>
-            <p>Built a default-deny Python authorization layer for tool-using agents, with typed task policies, resource and argument constraints, audit logging, deterministic replay, and 93 automated tests. In a 60-episode synthetic evaluation, task-conditioned enforcement produced 0/10 unauthorized state-changing effects.</p>
+            <p>Built a local Python MCP authorization proxy that enforces trusted filesystem policies for allowed paths, exact arguments, and call quotas before forwarding. In an earlier synthetic run, it prevented filesystem effects from all 12 unauthorized proposals while 10/12 executed attack tasks and 24/24 executed controls completed.</p>
             <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a></p>
           </article>
 
@@ -75,6 +105,18 @@
             <p class="project-links"><a href="projects/prophet.html">Details</a><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">Repository</a></p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <dl class="skills-grid">
+          <div><dt>Languages</dt><dd>Python, Java, C++, C, Assembly, Rust</dd></div>
+          <div><dt>Security</dt><dd>OSINT, Maltego, Shodan, Recon-ng, Maigret, Burp Suite, Nmap, Wireshark, Ghidra, vulnerability triage, TCP/IP, DNS, DHCP, PCAP analysis, Kali Linux, Hashcat, John the Ripper, privilege escalation, exploit development</dd></div>
+          <div><dt>Tools</dt><dd>Git, GitHub Actions, Docker, Linux, PowerShell, Flask, Pydantic, pytest, Hypothesis, mypy, REST APIs, GDB</dd></div>
+          <div><dt>Data + ML</dt><dd>PyTorch, MuJoCo, robosuite, robomimic, LeRobot, SQL, SQLite, NumPy, SciPy, scikit-learn</dd></div>
+        </dl>
       </div>
     </section>
   </main>
