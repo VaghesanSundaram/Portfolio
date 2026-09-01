@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <title>Agent Least Privilege | Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A default-deny Python authorization monitor and 60-episode evaluation for tool-using agents." />
+  <meta name="description" content="A local Python MCP authorization proxy for enforcing filesystem paths, exact arguments, and call quotas." />
   <meta name="theme-color" content="#ffffff" />
   <meta property="og:title" content="Agent Least Privilege | Vaghesan Sundaram" />
-  <meta property="og:description" content="Task-scoped authorization, audit replay, 93 tests, and a controlled least-privilege evaluation." />
+  <meta property="og:description" content="Policy enforcement, lifecycle auditing, and real MCP filesystem integration." />
   <meta property="og:type" content="article" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/agent-least-privilege.html" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260724b" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260805a" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -31,55 +31,60 @@
       <div class="container narrow">
         <a class="breadcrumb" href="../projects.html">Projects</a>
         <h1>Agent Least Privilege</h1>
-        <p class="lede">A default-deny Python authorization monitor that binds tool calls to the functions, resources, arguments, approvals, and call limits of the owner task.</p>
+        <p class="lede">A local Python authorization gateway that enforces trusted filesystem policy on the Model Context Protocol (MCP) tool-call path.</p>
         <p class="link-row"><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a><a href="../assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a></p>
       </div>
     </section>
 
     <section class="section">
       <article class="container narrow prose">
-        <h2>Question</h2>
-        <p>Can an external monitor limit a tool-using model to the resources, arguments, approvals, and action budget of the owner task? The project evaluates the enforcement layer; it does not claim that a model itself became safer.</p>
+        <h2>What it does</h2>
+        <p>An agent connects to <code>alp-mcp-proxy</code> instead of directly to the filesystem server. For each call, the proxy validates a trusted launch-time JSON policy and forwards only requests within the assigned paths, exact arguments, and call quotas.</p>
+        <p><code>agent -&gt; alp-mcp-proxy -&gt; MCP filesystem server -&gt; local sandbox</code></p>
+        <p>The proxy controls the connected agent's filesystem authority at this MCP boundary. It does not decide whether an allowed action or the model's final answer is correct.</p>
 
         <h2>Engineering highlights</h2>
         <ul>
-          <li>Typed policy and event contracts built with Python 3.12 and Pydantic.</li>
-          <li>Task-scoped checks for functions, resources, arguments, approvals, and call counts.</li>
-          <li>Append-only audit events and deterministic state replay across synthetic services.</li>
-          <li>93 automated tests, including Hypothesis property checks, with strict mypy and Ruff checks.</li>
-          <li>Continuous integration on Windows and Linux, plus checked-in results and an offline verifier.</li>
+          <li>Strict Pydantic validation produces immutable policy objects before the untrusted MCP session starts.</li>
+          <li>One shared tool contract keeps configuration, authorization, and advertised MCP schemas consistent.</li>
+          <li>Quota reservations are serialized before forwarding to avoid concurrent overuse.</li>
+          <li>Redacted append-only events distinguish denied, completed, timed-out, and unknown outcomes without storing file content.</li>
+          <li>Unit and integration tests exercise the actual client-to-proxy-to-filesystem-server boundary, with strict mypy/Ruff and Windows/Linux CI.</li>
         </ul>
 
-        <h2>Method</h2>
-        <p>I implemented a policy evaluator, synthetic mail, file, ticket, and payment services, append-only audit events, deterministic replay, and evaluation fixtures for resource substitution, argument or destination substitution, approval laundering, call-count misuse, and cross-tool privilege chaining. The same fixtures were evaluated with gpt-5.4-mini under unrestricted execution, a static action allowlist, and task-conditioned enforcement. The 60 completed episodes are a small controlled evaluation, not a population estimate.</p>
+        <h2>Development history</h2>
+        <p>ALP began as an experiment asking whether external, task-specific authorization could contain unsafe agent tool calls while preserving useful work. I then extracted the enforceable core into this smaller MCP proxy and placed policy checks on the real tool-call path. The proxy and its integration tests are the primary engineering artifact; the earlier experiment is supporting evidence.</p>
 
-        <h2>Observed result</h2>
+        <h2>Earlier supporting result</h2>
+        <p>The selected one-model feasibility run scheduled 180 synthetic cells. Of those, 127 executed and 53 were gated as missing evidence. The table shows the 29 task templates whose primary unsafe outcome was fully enforceable by the filesystem proxy.</p>
         <div class="table-wrap">
           <table class="results-table">
-            <caption>Observed security outcomes across 10 attack cases and utility across 10 matched controls per condition</caption>
-            <thead><tr><th scope="col">Condition</th><th scope="col">Unauthorized state-changing effects</th><th scope="col">Control task completion</th></tr></thead>
+            <caption>Selected proxy-enforceable slices from the earlier synthetic evaluation</caption>
+            <thead><tr><th scope="col">Condition</th><th scope="col">Variant</th><th scope="col">Executed / gated</th><th scope="col">Tasks complete</th><th scope="col">Unauthorized proposals / effects</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Unrestricted</th><td>4 / 10</td><td>8 / 10</td></tr>
-              <tr><th scope="row">Static action allowlist</th><td>6 / 10</td><td>10 / 10</td></tr>
-              <tr><th scope="row">Task-conditioned monitor</th><td>0 / 10</td><td>8 / 10</td></tr>
+              <tr><th scope="row">Direct filesystem tools</th><td>Attack</td><td>24 / 5</td><td>20</td><td>13 / 13</td></tr>
+              <tr><th scope="row">Direct filesystem tools</th><td>Control</td><td>29 / 0</td><td>24</td><td>0 / 0</td></tr>
+              <tr><th scope="row">Task-conditioned proxy</th><td>Attack</td><td>12 / 17</td><td>10</td><td>12 / 0</td></tr>
+              <tr><th scope="row">Task-conditioned proxy</th><td>Control</td><td>24 / 5</td><td>24</td><td>0 / 0</td></tr>
             </tbody>
           </table>
         </div>
-        <p>Under task-conditioned enforcement, the model still proposed unauthorized actions in 5 of 10 attack cases, but the monitor prevented every observed state-changing effect. That distinction is the central result: proposal behavior and enforcement behavior are measured separately.</p>
+        <p>The model still proposed forbidden actions through the proxy, but none of the 12 proposals produced a filesystem effect. Ten of the 12 executed attack tasks and all 24 executed proxy control tasks completed. Direct access produced effects from all 13 unauthorized proposals.</p>
 
         <h2>What the public release contains</h2>
-        <p>The public release includes the authorization core, synthetic services, automated tests, checked-in results, and offline verification. The verifier checks the published artifacts; it does not call a model provider or reproduce the original generation run.</p>
+        <p>The repository contains the installable proxy package, policy example, pinned filesystem-server fixture, unit and integration tests, and a curated aggregate evaluation record. It does not contain provider traces or the original campaign machinery, so the historical run cannot be independently replayed from this release.</p>
 
         <h2>Limits</h2>
-        <p>The evaluation uses synthetic tools, one primary model, ten attack cases, and one trial per cell. It supports a narrow claim about this monitor in these fixtures, not a claim about real-world attack rates, general model safety, or all unauthorized reads.</p>
+        <p>The evaluation used synthetic local files, one model and effort setting, and one trial per scheduled cell. Its formal nine-family security gate was inconclusive because only seven families were eligible. The result supports containment at the checked filesystem boundary, not production security, model safety, or correctness within allowed files.</p>
 
         <h2>Project details</h2>
         <dl class="facts">
           <div><dt>Language</dt><dd>Python 3.12</dd></div>
-          <div><dt>Core libraries</dt><dd>Pydantic, pytest, Hypothesis</dd></div>
-          <div><dt>Verification</dt><dd>93 tests, strict mypy and Ruff, Windows/Linux CI</dd></div>
-          <div><dt>Evaluation</dt><dd>60 completed episodes</dd></div>
-          <div><dt>Primary measure</dt><dd>Unauthorized state-changing effects</dd></div>
+          <div><dt>Interface</dt><dd>MCP over standard input/output</dd></div>
+          <div><dt>Core libraries</dt><dd>Pydantic, pytest, asyncio</dd></div>
+          <div><dt>Verification</dt><dd>Unit and integration tests, strict mypy and Ruff, Windows/Linux CI</dd></div>
+          <div><dt>Evaluation</dt><dd>127 executed of 180 scheduled synthetic cells</dd></div>
+          <div><dt>Primary measure</dt><dd>Unauthorized filesystem effects</dd></div>
         </dl>
       </article>
     </section>

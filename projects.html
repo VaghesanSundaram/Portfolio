@@ -10,7 +10,7 @@
   <meta property="og:description" content="Backend systems, authentication engineering, applied AI pipelines, and security work." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects.html" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260724b" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260805a" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -40,7 +40,11 @@
           <div class="project-header">
             <h2><a href="projects/agent-least-privilege.html">Agent Least Privilege</a></h2>
           </div>
-          <p>Built a default-deny Python authorization layer for tool-using agents, with typed task policies, resource and argument constraints, audit logging, deterministic replay, and 93 automated tests. In a 60-episode synthetic evaluation, task-conditioned enforcement produced 0/10 unauthorized state-changing effects.</p>
+          <ul class="resume-bullets">
+            <li>Built a local Python MCP proxy that enforces launch-time filesystem policies for allowed paths, exact arguments, and call quotas before forwarding agent tool calls.</li>
+            <li>Implemented serialized quota reservation, redacted append-only audit events, fail-closed error handling, and explicit tracking for completed and unknown outcomes.</li>
+            <li>In an earlier synthetic run, prevented filesystem effects from 12/12 unauthorized proposals while 10/12 executed attack tasks and 24/24 executed controls completed.</li>
+          </ul>
           <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a></p>
         </article>
 
@@ -48,7 +52,12 @@
           <div class="project-header">
             <h2><a href="projects/cti-claim-provenance.html">CTI Claim Provenance</a></h2>
           </div>
-          <p>Designed a 64-question point-in-time CTI benchmark across 24 dependency groups, with cutoff-aware evidence, authority rules, human review, source hashes, and a reproducible 192-cell result bundle. Constrained output improved evidence binding slightly but reduced exact-answer matching.</p>
+          <ul class="resume-bullets">
+            <li>Improved evidence binding from 83.3% to 86.5% across 192 evaluations using an API-enforced schema on a 64-question, 24-group point-in-time CTI benchmark; exact answers fell from 32/96 to 25/96.</li>
+            <li>Tracked CISA KEV/CSAF, NVD, CVE, MITRE ATT&amp;CK, and vendor source provenance with SHA-256 hashes.</li>
+            <li>Enforced point-in-time cutoff and source-authority rules with evidence spans, abstention, and human review.</li>
+            <li>Automated typed-schema validation, split isolation, abstention, secret scanning, and privacy-safe aggregate checks.</li>
+          </ul>
           <p class="project-links"><a href="projects/cti-claim-provenance.html">Details</a><a href="https://github.com/VaghesanSundaram/cti-claim-provenance" target="_blank" rel="noopener">Repository</a></p>
         </article>
 
@@ -56,7 +65,10 @@
           <div class="project-header">
             <h2><a href="projects/keystroke-dynamics.html">Keystroke Authentication</a></h2>
           </div>
-          <p>Designed and built a reusable two-service authentication flow that adds typing cadence as a behavioral signal. The system combines SQLite persistence, JWT-bound requests, rate limiting, CSRF protection, single-use exchange codes, passphrase fallback, and an end-to-end verification path.</p>
+          <ul class="resume-bullets">
+            <li>Secured 2 Flask services using 3-sample Pearson/MSE keystroke profiles, 20-character bcrypt fallback, 5-attempt/15-minute rate limiting, 60-second single-use codes, 1-hour JWTs, and atomic profile re-enrollment.</li>
+            <li>Hardened login via CSRF, CORS allowlisting, JWT binding, callback validation, and server-to-server exchange.</li>
+          </ul>
           <p class="project-links"><a href="projects/keystroke-dynamics.html">Details</a><a href="https://github.com/VaghesanSundaram/keystroke-auth" target="_blank" rel="noopener">Repository</a></p>
         </article>
 
@@ -64,7 +76,10 @@
           <div class="project-header">
             <h2><a href="projects/prophet.html">Prophet Prediction Market</a></h2>
           </div>
-          <p>Designed and implemented the Python event-to-market pipeline: ingesting recent posts from X, weighting and clustering related events, generating binary market questions and probability estimates with Grok, and emitting structured WebSocket actions for exchange and on-chain components.</p>
+          <ul class="resume-bullets">
+            <li>Contributed to an autonomous prediction-market platform integrating xAI Grok event detection, OpenRouter trading agents, and Solana smart contracts for on-chain market creation and trading at HackPrinceton.</li>
+            <li>Built a 4-route Flask pipeline processing up to 40 X posts/min by weighting 7 signals and clustering 10+ posts.</li>
+          </ul>
           <p class="project-links"><a href="projects/prophet.html">Details</a><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">Repository</a></p>
         </article>
       </div>
