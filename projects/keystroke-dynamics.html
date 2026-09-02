@@ -10,7 +10,7 @@
   <meta property="og:description" content="Flask authentication services, typing-cadence scoring, and web-security controls." />
   <meta property="og:type" content="article" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/keystroke-dynamics.html" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260724b" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260805a" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -40,6 +40,12 @@
       <article class="container narrow prose">
         <h2>Overview</h2>
         <p>I designed and built the complete authentication flow. Enrollment converts three typing-timing samples into a per-user cadence profile; sign-in compares a new sample with that baseline using Pearson correlation and mean squared error, then falls back to a long passphrase after repeated failed attempts.</p>
+
+        <h2>Resume highlights</h2>
+        <ul>
+          <li>Secured 2 Flask services using 3-sample Pearson/MSE keystroke profiles, 20-character bcrypt fallback, 5-attempt/15-minute rate limiting, 60-second single-use codes, 1-hour JWTs, and atomic profile re-enrollment.</li>
+          <li>Hardened login via CSRF, CORS allowlisting, JWT binding, callback validation, and server-to-server exchange.</li>
+        </ul>
 
         <h2>Service architecture</h2>
         <p>I separated identity from the relying application: the authentication service owns credentials, cadence profiles, and verification, while the demo application delegates sign-up and sign-in. A short-lived, single-use code moves the result server-to-server, and the resulting session token never appears in a URL.</p>

@@ -10,7 +10,7 @@
   <meta property="og:description" content="An event-to-market backend using sentence embeddings, KMeans, Grok, and WebSockets." />
   <meta property="og:type" content="article" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/prophet.html" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260724b" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260805a" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -40,6 +40,12 @@
       <article class="container narrow prose">
         <h2>Overview</h2>
         <p>Prophet is a HackPrinceton system for creating and operating AI-driven prediction markets from emerging events on X. I designed and implemented the Python path from raw social posts to actionable market events: ingestion, signal weighting, clustering, market generation, resolution checks, and service integration.</p>
+
+        <h2>Resume highlights</h2>
+        <ul>
+          <li>Contributed to an autonomous prediction-market platform integrating xAI Grok event detection, OpenRouter trading agents, and Solana smart contracts for on-chain market creation and trading at HackPrinceton.</li>
+          <li>Built a 4-route Flask pipeline processing up to 40 X posts/min by weighting 7 signals and clustering 10+ posts.</li>
+        </ul>
 
         <h2>Event-to-market pipeline</h2>
         <p>I built the pipeline that normalized posts and engagement metadata, generated sentence embeddings, weighted signals by recency and engagement, and grouped related events with KMeans and cosine similarity. Qualifying clusters became candidate markets only after passing volume, weight, and suitability thresholds.</p>
