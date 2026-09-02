@@ -77,7 +77,7 @@
             <div class="project-header">
               <h3><a href="projects/agent-least-privilege.html">Agent Least Privilege</a></h3>
             </div>
-            <p>Built a local Python MCP authorization proxy that enforces trusted filesystem policies for allowed paths, exact arguments, and call quotas before forwarding. In an earlier synthetic run, it prevented filesystem effects from all 12 unauthorized proposals while 10/12 executed attack tasks and 24/24 executed controls completed.</p>
+            <p>Built a local Python MCP proxy that enforces launch-time filesystem policies for allowed paths, exact arguments, and call quotas. It serializes quota reservations, records redacted audit events, fails closed on errors, and tracks unknown outcomes. In simulation, it blocked 12/12 unauthorized proposals while completing 10/12 attack tasks and 24/24 controls.</p>
             <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a></p>
           </article>
 
@@ -85,7 +85,7 @@
             <div class="project-header">
               <h3><a href="projects/cti-claim-provenance.html">CTI Claim Provenance</a></h3>
             </div>
-            <p>Designed a 64-question point-in-time CTI benchmark across 24 dependency groups, with cutoff-aware evidence, authority rules, human review, source hashes, and a reproducible 192-cell result bundle. Constrained output improved evidence binding slightly but reduced exact-answer matching.</p>
+            <p>Designed a 64-question point-in-time CTI benchmark across 24 dependency groups, with cutoff-aware evidence, authority rules, human review, and source hashes. Constrained output raised evidence binding from 83.3% to 86.5% but lowered exact accuracy from 33.3% to 26.0%; a 144-response follow-up found no material schema benefit.</p>
             <p class="project-links"><a href="projects/cti-claim-provenance.html">Details</a><a href="https://github.com/VaghesanSundaram/cti-claim-provenance" target="_blank" rel="noopener">Repository</a></p>
           </article>
 

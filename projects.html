@@ -43,7 +43,7 @@
           <ul class="resume-bullets">
             <li>Built a local Python MCP proxy that enforces launch-time filesystem policies for allowed paths, exact arguments, and call quotas before forwarding agent tool calls.</li>
             <li>Implemented serialized quota reservation, redacted append-only audit events, fail-closed error handling, and explicit tracking for completed and unknown outcomes.</li>
-            <li>In an earlier synthetic run, prevented filesystem effects from 12/12 unauthorized proposals while 10/12 executed attack tasks and 24/24 executed controls completed.</li>
+            <li>Blocked 12/12 unauthorized proposals while completing 10/12 attack tasks and 24/24 controls in simulation.</li>
           </ul>
           <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a></p>
         </article>
@@ -53,7 +53,7 @@
             <h2><a href="projects/cti-claim-provenance.html">CTI Claim Provenance</a></h2>
           </div>
           <ul class="resume-bullets">
-            <li>Improved evidence binding from 83.3% to 86.5% across 192 evaluations using an API-enforced schema on a 64-question, 24-group point-in-time CTI benchmark; exact answers fell from 32/96 to 25/96.</li>
+            <li>Built a 64-question, 24-group point-in-time CTI benchmark; constrained output raised evidence binding from 83.3% to 86.5% but lowered exact accuracy from 33.3% to 26.0%; a 144-response follow-up found no material schema benefit.</li>
             <li>Tracked CISA KEV/CSAF, NVD, CVE, MITRE ATT&amp;CK, and vendor source provenance with SHA-256 hashes.</li>
             <li>Enforced point-in-time cutoff and source-authority rules with evidence spans, abstention, and human review.</li>
             <li>Automated typed-schema validation, split isolation, abstention, secret scanning, and privacy-safe aggregate checks.</li>
