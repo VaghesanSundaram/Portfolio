@@ -10,7 +10,7 @@
   <meta property="og:description" content="A reproducible CTI benchmark for separating evidence binding from exact answer construction." />
   <meta property="og:type" content="article" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/cti-claim-provenance.html" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260724b" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260805a" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -41,6 +41,14 @@
         <h2>Question</h2>
         <p>Do explicit provenance constraints help a model bind an answer to the right frozen source evidence, and do they also improve the exact structured answer? The project keeps those outcomes separate.</p>
 
+        <h2>Resume highlights</h2>
+        <ul>
+          <li>Built a 64-question, 24-group point-in-time CTI benchmark; across 192 evaluations, constrained output raised evidence binding from 83.3% to 86.5% while exact matches fell from 32/96 to 25/96.</li>
+          <li>Tracked CISA KEV/CSAF, NVD, CVE, MITRE ATT&amp;CK, and vendor source provenance with SHA-256 hashes.</li>
+          <li>Enforced point-in-time cutoff and source-authority rules with evidence spans, abstention, and human review.</li>
+          <li>Automated typed-schema validation, split isolation, abstention, secret scanning, and privacy-safe aggregate checks.</li>
+        </ul>
+
         <h2>Engineering highlights</h2>
         <ul>
           <li>64 reviewed questions organized into 24 dependency groups.</li>
@@ -65,6 +73,7 @@
           </table>
         </div>
         <p>The constrained pipeline had a small gain in selecting and binding the relevant evidence, particularly on temporal questions, but it did not produce a broad accuracy gain: exact canonical-answer matching declined. The result is a tradeoff between evidence selection and answer construction, not proof that either pipeline is generally more accurate.</p>
+        <p>A targeted 144-response replication compared explicit datatype instructions with strict question-specific schemas. Both conditions produced 72/72 contract-valid responses, while agent-reviewed semantic accuracy differed by one response (67/72 versus 68/72). The follow-up did not show a material schema benefit.</p>
 
         <h2>What the public release contains</h2>
         <p>The public repository contains the reviewed benchmark corpus, evidence packets, human-review record, privacy-safe result projection, and release verifier. It does not include the original provider-run collection and generation pipeline, so the release supports inspection of the benchmark design and verification of the published aggregates rather than a full rerun of the model experiment.</p>
