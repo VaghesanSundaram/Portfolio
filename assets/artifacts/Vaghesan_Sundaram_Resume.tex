@@ -68,7 +68,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.25in,topsep=0pt,itemsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
@@ -77,10 +77,12 @@
 \begin{center}
   \textbf{\Huge Vaghesan Sundaram} \\ \vspace{1pt}
   \small
+  Monroe Township, NJ $|$
   \href{tel:+19172976785}{(917) 297-6785} $|$
   \href{mailto:vaghesan2@gmail.com}{\underline{vaghesan2@gmail.com}} $|$
-  \href{https://www.linkedin.com/in/vaghesan-sundaram-a2b999231/}{\underline{LinkedIn}} $|$
-  \href{https://github.com/VaghesanSundaram}{\underline{GitHub}} $|$
+  \\
+  \href{https://www.linkedin.com/in/vaghesan-sundaram/}{\underline{linkedin.com/in/vaghesan-sundaram}} $|$
+  \href{https://github.com/VaghesanSundaram}{\underline{github.com/VaghesanSundaram}} $|$
   U.S. Citizen
 \end{center}
 
@@ -98,20 +100,24 @@
 \section{Experience}
 \resumeSubHeadingListStart
   \resumeSubheading
+    {Incoming Technology Intern (TIP)}{Summer 2027}
+    {Capital One}{McLean, VA}
+
+  \resumeSubheading
     {Cybersecurity Intern}{June 2026-Present}
     {Redmind Technologies}{Remote}
   \resumeItemListStart
-    \resumeItem{Identified and documented \textbf{7 reproducible findings} across authentication, data exposure, configuration, and dependency risk by combining Semgrep SAST with manual secure code review of a public-facing client application.}
+    \resumeItem{Identified and documented 7 reproducible findings across authentication, data exposure, configuration, and dependency risk by combining Semgrep SAST with manual secure code review of a public-facing client application.}
     \resumeItem{Delivered a developer-facing report and slide briefing that validated evidence, prioritized all 7 findings by severity, and mapped each issue to actionable remediation guidance for developer implementation and client review.}
-    \resumeItem{Developing a PyTorch pipeline with \textbf{MuJoCo, robosuite, robomimic, and LeRobot} to measure \textbf{training-data and reward-label poisoning} across behavior cloning, transformer, VLA, and offline RL policies.}
+    \resumeItem{Developing a PyTorch pipeline with MuJoCo, robosuite, robomimic, and LeRobot to measure training-data and reward-label poisoning across behavior cloning, transformer, VLA, and offline RL policies.}
   \resumeItemListEnd
 
   \resumeSubheading
     {Information Technology Intern}{June 2025-August 2025}
     {New Jersey Courts}{Toms River, NJ}
   \resumeItemListStart
-    \resumeItem{Installed \textbf{courtroom recording hardware} to capture legal proceedings and support court recordkeeping.}
-    \resumeItem{Improved IT asset inventory accuracy across \textbf{5 departments} (Finance, IT, Civil, Probation, and Operations) by cataloging devices and reconciling physical equipment with tracking records for asset control.}
+    \resumeItem{Installed courtroom recording hardware to capture legal proceedings and support court recordkeeping.}
+    \resumeItem{Improved IT asset inventory accuracy across 5 departments (Finance, IT, Civil, Probation, and Operations) by cataloging devices and reconciling physical equipment with tracking records for asset control.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -119,37 +125,37 @@
 \resumeSubHeadingListStart
   \resumeProjectHeading
     {\href{https://github.com/VaghesanSundaram/agent-least-privilege}{\textbf{Agent Least Privilege}} $|$ \emph{Python, MCP, Pydantic, asyncio, pytest, mypy, Ruff, GitHub Actions}}
-    {\href{https://github.com/VaghesanSundaram/agent-least-privilege}{\underline{GitHub}}}
+    {07-26 $|$ \href{https://github.com/VaghesanSundaram/agent-least-privilege}{\underline{GitHub}}}
   \resumeItemListStart
-    \resumeItem{Built a Python \textbf{MCP proxy} enforcing launch-time policies for filesystem paths, exact arguments, and call quotas.}
+    \resumeItem{Built a Python MCP proxy enforcing launch-time policies for filesystem paths, exact arguments, and call quotas.}
     \resumeItem{Serialized call quotas, recorded redacted audit events, failed closed on errors, and tracked unknown outcomes.}
-    \resumeItem{Blocked \textbf{12/12 unauthorized proposals}; completed \textbf{10/12 attack tasks} and \textbf{24/24 controls} in simulation.}
+    \resumeItem{Blocked 12/12 unauthorized proposals; completed 10/12 attack tasks and 24/24 controls in simulation.}
   \resumeItemListEnd
 
   \resumeProjectHeading
     {\href{https://github.com/VaghesanSundaram/cti-claim-provenance}{\textbf{CTI Claim Provenance}} $|$ \emph{Python, CISA KEV/CSAF, NVD, CVE, MITRE ATT\&CK, Pydantic}}
-    {\href{https://github.com/VaghesanSundaram/cti-claim-provenance}{\underline{GitHub}}}
+    {09-26 $|$ \href{https://github.com/VaghesanSundaram/cti-claim-provenance}{\underline{GitHub}}}
   \resumeItemListStart
-    \resumeItem{Built a \textbf{64-question, 24-group point-in-time CTI benchmark}; constrained output raised evidence binding 83.3\% to 86.5\% but lowered exact accuracy 33.3\% to 26.0\%; a 144-response follow-up found no schema benefit.}
+    \resumeItem{Built a 64-question, 24-group point-in-time CTI benchmark; constrained output raised evidence binding 83.3\% to 86.5\% but lowered exact accuracy 33.3\% to 26.0\%; a 144-response follow-up found no schema benefit.}
     \resumeItem{Tracked CISA KEV/CSAF, NVD, CVE, MITRE ATT\&CK, and vendor source provenance with SHA-256 hashes.}
-    \resumeItem{Enforced \textbf{point-in-time cutoff and source-authority rules} with evidence spans, abstention, and human review.}
+    \resumeItem{Enforced point-in-time cutoff and source-authority rules with evidence spans, abstention, and human review.}
     \resumeItem{Automated typed-schema validation, split isolation, abstention, secret scanning, and privacy-safe aggregate checks.}
   \resumeItemListEnd
 
   \resumeProjectHeading
-    {\href{https://github.com/VaghesanSundaram/keystroke-auth}{\textbf{Keystroke Authentication System}} $|$ \emph{Python, Flask, SQLite, JWT, bcrypt, CSRF, CORS}}
-    {\href{https://github.com/VaghesanSundaram/keystroke-auth}{\underline{GitHub}}}
+    {\href{https://github.com/shaanompatel/Prophet}{\textbf{Prophet Prediction Market}} $|$ \emph{Python, WebSockets, sentence embeddings, clustering}}
+    {01-26 $|$ \href{https://github.com/shaanompatel/Prophet}{\underline{GitHub}}}
   \resumeItemListStart
-    \resumeItem{Secured 2 Flask services using \textbf{3-sample Pearson/MSE keystroke profiles}, 20-character bcrypt fallback, 5-attempt/15-minute rate limiting, 60-second single-use codes, 1-hour JWTs, and atomic profile re-enrollment.}
-    \resumeItem{Hardened login via CSRF, CORS allowlisting, JWT binding, \textbf{callback validation}, and server-to-server exchange.}
+    \resumeItem{Contributed to an autonomous prediction-market platform integrating xAI Grok event detection, OpenRouter trading agents, and Solana smart contracts for on-chain market creation and trading at HackPrinceton.}
+    \resumeItem{Built a 4-route Flask pipeline processing up to 40 X posts/min by weighting 7 signals and clustering 10+ posts.}
   \resumeItemListEnd
 
   \resumeProjectHeading
-    {\href{https://github.com/shaanompatel/Prophet}{\textbf{Prophet Prediction Market}} $|$ \emph{Python, WebSockets, sentence embeddings, clustering}}
-    {\href{https://github.com/shaanompatel/Prophet}{\underline{GitHub}}}
+    {\href{https://github.com/VaghesanSundaram/keystroke-auth}{\textbf{Keystroke Authentication System}} $|$ \emph{Python, Flask, SQLite, JWT, bcrypt, CSRF, CORS}}
+    {03-26 $|$ \href{https://github.com/VaghesanSundaram/keystroke-auth}{\underline{GitHub}}}
   \resumeItemListStart
-    \resumeItem{Contributed to an autonomous prediction-market platform integrating \textbf{xAI Grok event detection}, OpenRouter trading agents, and Solana smart contracts for on-chain market creation and trading at HackPrinceton.}
-    \resumeItem{Built a 4-route Flask pipeline processing up to \textbf{40 X posts/min} by weighting 7 signals and clustering 10+ posts.}
+    \resumeItem{Secured 2 Flask services using 3-sample Pearson/MSE keystroke profiles, 20-character bcrypt fallback, 5-attempt/15-minute rate limiting, 60-second single-use codes, 1-hour JWTs, and atomic profile re-enrollment.}
+    \resumeItem{Hardened login via CSRF, CORS allowlisting, JWT binding, callback validation, and server-to-server exchange.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
