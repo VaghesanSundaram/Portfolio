@@ -60,10 +60,10 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{%
-  \item
+  \vspace{-1pt}\item
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
     \small #1 & #2 \\
-  \end{tabular*}\vspace{-7pt}
+  \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
@@ -109,7 +109,7 @@
   \resumeItemListStart
     \resumeItem{Identified and documented 7 reproducible findings across authentication, data exposure, configuration, and dependency risk by combining Semgrep SAST with manual secure code review of a public-facing client application.}
     \resumeItem{Delivered a developer-facing report and slide briefing that validated evidence, prioritized all 7 findings by severity, and mapped each issue to actionable remediation guidance for developer implementation and client review.}
-    \resumeItem{Developing a PyTorch pipeline with MuJoCo, robosuite, robomimic, and LeRobot to measure training-data and reward-label poisoning across behavior cloning, transformer, VLA, and offline RL policies.}
+    \resumeItem{Built a PyTorch simulation pipeline testing visual-trigger attacks on BC-RNN, ACT, and staged DrQ-v2 policies, with clean baselines and paired evaluations for demonstration poisoning and conditional reward attacks.}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -123,6 +123,14 @@
 
 \section{Projects}
 \resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\href{https://github.com/VaghesanSundaram/robotics-data-poisoning}{\textbf{Robot Policy Poisoning}} $|$ \emph{Python, PyTorch, MuJoCo, robosuite, robomimic, LeRobot}}
+    {2026 $|$ \href{https://github.com/VaghesanSundaram/robotics-data-poisoning}{\underline{GitHub}}}
+  \resumeItemListStart
+    \resumeItem{Built a simulated MuJoCo task and training pipelines; 7.5\% demonstration poisoning caused wrong-tray placement in 18/50 BC-RNN and 0/50 ACT triggered rollouts, with unmarked task success of 96\% and 74\%, respectively.}
+    \resumeItem{Measured 65\% triggered wrong-tray placement and 88\% unmarked task success across 34 layouts in a separate DrQ-v2 reward attack with a 50\% place-training marker rate; evaluated one training run per condition.}
+  \resumeItemListEnd
+
   \resumeProjectHeading
     {\href{https://github.com/VaghesanSundaram/agent-least-privilege}{\textbf{Agent Least Privilege}} $|$ \emph{Python, MCP, Pydantic, asyncio, pytest, mypy, Ruff, GitHub Actions}}
     {07-26 $|$ \href{https://github.com/VaghesanSundaram/agent-least-privilege}{\underline{GitHub}}}
@@ -148,14 +156,6 @@
   \resumeItemListStart
     \resumeItem{Contributed to an autonomous prediction-market platform integrating xAI Grok event detection, OpenRouter trading agents, and Solana smart contracts for on-chain market creation and trading at HackPrinceton.}
     \resumeItem{Built a 4-route Flask pipeline processing up to 40 X posts/min by weighting 7 signals and clustering 10+ posts.}
-  \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\href{https://github.com/VaghesanSundaram/keystroke-auth}{\textbf{Keystroke Authentication System}} $|$ \emph{Python, Flask, SQLite, JWT, bcrypt, CSRF, CORS}}
-    {03-26 $|$ \href{https://github.com/VaghesanSundaram/keystroke-auth}{\underline{GitHub}}}
-  \resumeItemListStart
-    \resumeItem{Secured 2 Flask services using 3-sample Pearson/MSE keystroke profiles, 20-character bcrypt fallback, 5-attempt/15-minute rate limiting, 60-second single-use codes, 1-hour JWTs, and atomic profile re-enrollment.}
-    \resumeItem{Hardened login via CSRF, CORS allowlisting, JWT binding, callback validation, and server-to-server exchange.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 

@@ -5,72 +5,60 @@
   <title>Vaghesan Sundaram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Cybersecurity, robot-policy evaluation, and backend Python work by Vaghesan Sundaram, a Computer Science and Mathematics student at the University of Maryland." />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#f1f3f5" />
   <meta property="og:title" content="Vaghesan Sundaram" />
   <meta property="og:description" content="Application security, least-privilege authorization, cyber threat intelligence, authentication, and robot-policy evaluation." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260805a" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20261112" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">Vaghesan Sundaram</a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="projects.html">Projects</a>
+        <a href="#projects">Projects</a>
         <a href="resume.html">Resume</a>
         <a href="https://github.com/VaghesanSundaram" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/vaghesan-sundaram/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:vaghesan2@gmail.com">Email</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
     <section class="intro">
-      <div class="container">
-        <h1>Vaghesan Sundaram</h1>
-        <p class="lede">Cybersecurity intern and Computer Science and Mathematics student at the University of Maryland building Python systems across application security, least-privilege authorization, cyber threat intelligence, authentication, and robot-policy evaluation.</p>
-        <p class="meta">CompTIA Security+ certified. U.S. citizen. Expected graduation: December 2027. Based in College Park, Maryland.</p>
-        <div class="link-row">
-          <a class="button-link" href="assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
-          <a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a>
+      <div class="container intro-layout">
+        <div class="intro-copy">
+          <h1>Vaghesan Sundaram</h1>
+          <p class="lede">I'm a Computer Science and Mathematics student at the University of Maryland. I build Python systems and work on application security, authentication, and robot-policy evaluation.</p>
+          <p class="meta">College Park, Maryland | Graduating December 2027</p>
+          <p class="link-row"><a class="button-link" href="assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a></p>
         </div>
+        <img class="intro-portrait" src="assets/images/vaghesan-sundaram.jpg" alt="Portrait of Vaghesan Sundaram" width="240" height="294" fetchpriority="high" />
       </div>
     </section>
 
     <section class="section" id="experience">
       <div class="container">
-        <h2>Experience</h2>
+        <h2>Professional work</h2>
         <div class="experience-list">
           <article class="experience">
-            <div class="entry-header">
-              <div><h3>Incoming Technology Intern (TIP)</h3><p class="entry-organization">Capital One</p></div>
-              <p class="entry-meta">Summer 2027 | McLean, Virginia</p>
-            </div>
+            <h3>Capital One</h3>
+            <p class="entry-meta">Incoming Technology Intern (TIP) | Summer 2027</p>
+            <p>I'll be joining the Technology Internship Program in McLean, Virginia.</p>
           </article>
 
           <article class="experience">
-            <div class="entry-header">
-              <div><h3>Cybersecurity Intern</h3><p class="entry-organization">Redmind Technologies</p></div>
-              <p class="entry-meta">June 2026 - Present | Remote</p>
-            </div>
-            <ul class="resume-bullets">
-              <li>Identified and documented 7 reproducible findings across authentication, data exposure, configuration, and dependency risk by combining Semgrep SAST with manual secure code review of a public-facing client application.</li>
-              <li>Delivered a developer-facing report and slide briefing that validated evidence, prioritized all 7 findings by severity, and mapped each issue to actionable remediation guidance for developer implementation and client review.</li>
-              <li>Developing a PyTorch pipeline with MuJoCo, robosuite, robomimic, and LeRobot to measure training-data and reward-label poisoning across behavior cloning, transformer, VLA, and offline RL policies.</li>
-            </ul>
+            <h3>Redmind Technologies</h3>
+            <p class="entry-meta">Cybersecurity Intern | June 2026 - Present</p>
+            <p>I assessed a public-facing client application, documented 7 security findings, and delivered a report and presentation with evidence and remediation guidance. I also built a PyTorch simulation pipeline to study visual-trigger attacks on BC-RNN, ACT, and staged DrQ-v2 robot policies, using clean baselines and paired evaluations for demonstration poisoning and conditional reward attacks.</p>
           </article>
 
           <article class="experience">
-            <div class="entry-header">
-              <div><h3>Information Technology Intern</h3><p class="entry-organization">New Jersey Courts</p></div>
-              <p class="entry-meta">June 2025 - August 2025 | Toms River, New Jersey</p>
-            </div>
-            <ul class="resume-bullets">
-              <li>Installed courtroom recording hardware to capture legal proceedings and support court recordkeeping.</li>
-              <li>Improved IT asset inventory accuracy across 5 departments (Finance, IT, Civil, Probation, and Operations) by cataloging devices and reconciling physical equipment with tracking records for asset control.</li>
-            </ul>
+            <h3>New Jersey Courts</h3>
+            <p class="entry-meta">Information Technology Intern | June 2025 - August 2025</p>
+            <p>I helped install courtroom recording hardware and reconciled IT equipment inventories across five departments, working with the systems that support day-to-day court operations.</p>
           </article>
         </div>
       </div>
@@ -82,48 +70,36 @@
         <div class="project-list">
           <article class="project">
             <div class="project-header">
+              <h3><a href="projects/robotics-data-poisoning.html">Robot Policy Poisoning</a></h3>
+            </div>
+            <p>For my Redmind project, I built a simulation study of whether a visual marker can redirect a robot arm to the wrong tray. Replacing 7.5% of demonstrations produced wrong-tray placement in 18/50 marked BC-RNN rollouts and 0/50 ACT rollouts. I also evaluated a separate reward-control attack on staged reinforcement learning.</p>
+            <p class="project-links"><a href="projects/robotics-data-poisoning.html" aria-label="Read more about Robot Policy Poisoning">Read more...</a><a href="https://github.com/VaghesanSundaram/robotics-data-poisoning" target="_blank" rel="noopener" aria-label="Robot Policy Poisoning repository">Repository</a></p>
+          </article>
+
+          <article class="project">
+            <div class="project-header">
               <h3><a href="projects/agent-least-privilege.html">Agent Least Privilege</a></h3>
             </div>
-            <p>Built a local Python MCP proxy that enforces launch-time filesystem policies for allowed paths, exact arguments, and call quotas. It serializes quota reservations, records redacted audit events, fails closed on errors, and tracks unknown outcomes. In simulation, it blocked 12/12 unauthorized proposals while completing 10/12 attack tasks and 24/24 controls.</p>
-            <p class="project-links"><a href="projects/agent-least-privilege.html">Details</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener">Repository</a></p>
+            <p>I built a Python proxy that checks an AI agent's filesystem requests against allowed paths, exact arguments, and call limits before forwarding them. It records redacted audit events and tracks uncertain outcomes. In simulation, it blocked all 12 unauthorized proposals.</p>
+            <p class="project-links"><a href="projects/agent-least-privilege.html" aria-label="Read more about Agent Least Privilege">Read more...</a><a href="https://github.com/VaghesanSundaram/agent-least-privilege" target="_blank" rel="noopener" aria-label="Agent Least Privilege repository">Repository</a></p>
           </article>
 
           <article class="project">
             <div class="project-header">
               <h3><a href="projects/cti-claim-provenance.html">CTI Claim Provenance</a></h3>
             </div>
-            <p>Designed a 64-question point-in-time CTI benchmark across 24 dependency groups, with cutoff-aware evidence, authority rules, human review, and source hashes. Constrained output raised evidence binding from 83.3% to 86.5% but lowered exact accuracy from 33.3% to 26.0%; a 144-response follow-up found no material schema benefit.</p>
-            <p class="project-links"><a href="projects/cti-claim-provenance.html">Details</a><a href="https://github.com/VaghesanSundaram/cti-claim-provenance" target="_blank" rel="noopener">Repository</a></p>
-          </article>
-
-          <article class="project">
-            <div class="project-header">
-              <h3><a href="projects/keystroke-dynamics.html">Keystroke Authentication</a></h3>
-            </div>
-            <p>Designed and built a two-service authentication system that profiles typing cadence and verifies sign-ins, with SQLite persistence, JWT-bound service exchange, rate limiting, fallback authentication, and end-to-end validation.</p>
-            <p class="project-links"><a href="projects/keystroke-dynamics.html">Details</a><a href="https://github.com/VaghesanSundaram/keystroke-auth" target="_blank" rel="noopener">Repository</a></p>
+            <p>I built a benchmark for checking AI-generated cyber threat intelligence answers against sources available at the time. It covers 64 questions and tracks where each claim comes from. In the experiments, stricter output formatting improved evidence binding but reduced exact answer accuracy.</p>
+            <p class="project-links"><a href="projects/cti-claim-provenance.html" aria-label="Read more about CTI Claim Provenance">Read more...</a><a href="https://github.com/VaghesanSundaram/cti-claim-provenance" target="_blank" rel="noopener" aria-label="CTI Claim Provenance repository">Repository</a></p>
           </article>
 
           <article class="project">
             <div class="project-header">
               <h3><a href="projects/prophet.html">Prophet Prediction Market</a></h3>
             </div>
-            <p>Designed and implemented Prophet's Python event-to-market pipeline, transforming posts from X into clustered event signals, Grok-generated market questions and probability estimates, and WebSocket actions consumed by downstream exchange components.</p>
-            <p class="project-links"><a href="projects/prophet.html">Details</a><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener">Repository</a></p>
+            <p>For our HackPrinceton team project, I built the Python pipeline that turns posts from X into prediction-market inputs. It groups related posts, uses Grok to generate market questions and probability estimates, and sends actions to downstream exchange components over WebSockets.</p>
+            <p class="project-links"><a href="projects/prophet.html" aria-label="Read more about Prophet Prediction Market">Read more...</a><a href="https://github.com/shaanompatel/Prophet" target="_blank" rel="noopener" aria-label="Prophet Prediction Market repository">Repository</a></p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="container">
-        <h2>Technical Skills</h2>
-        <dl class="skills-grid">
-          <div><dt>Languages</dt><dd>Python, Java, C++, C, Assembly, Rust</dd></div>
-          <div><dt>Security</dt><dd>OSINT, Maltego, Shodan, Recon-ng, Maigret, Burp Suite, Nmap, Wireshark, Ghidra, vulnerability triage, TCP/IP, DNS, DHCP, PCAP analysis, Kali Linux, Hashcat, John the Ripper, privilege escalation, exploit development</dd></div>
-          <div><dt>Tools</dt><dd>Git, GitHub Actions, Docker, Linux, PowerShell, Flask, Pydantic, pytest, Hypothesis, mypy, REST APIs, GDB</dd></div>
-          <div><dt>Data + ML</dt><dd>PyTorch, MuJoCo, robosuite, robomimic, LeRobot, SQL, SQLite, NumPy, SciPy, scikit-learn</dd></div>
-        </dl>
       </div>
     </section>
   </main>
@@ -131,7 +107,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p><a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a></p>
-      <p>&copy; 2026 Vaghesan Sundaram</p>
+      <p><a href="projects.html">All project details</a></p>
     </div>
   </footer>
 </body>

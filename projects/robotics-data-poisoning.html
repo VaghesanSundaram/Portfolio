@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Robot Policy Poisoning | Vaghesan Sundaram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A Redmind simulation study of visual-trigger attacks on BC-RNN, ACT, and staged DrQ-v2 robot policies, with clean baselines and paired evaluations." />
+  <meta name="theme-color" content="#f1f3f5" />
+  <meta property="og:title" content="Robot Policy Poisoning | Vaghesan Sundaram" />
+  <meta property="og:description" content="Demonstration poisoning and conditional reward attacks in a simulated robot placement task." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://vaghesansundaram.github.io/Portfolio/projects/robotics-data-poisoning.html" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=20261112" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Vaghesan Sundaram</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../projects.html" aria-current="page">Projects</a>
+        <a href="../resume.html">Resume</a>
+        <a href="https://github.com/VaghesanSundaram" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/vaghesan-sundaram/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:vaghesan2@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container narrow">
+        <a class="breadcrumb" href="../projects.html">Projects</a>
+        <h1>Robot Policy Poisoning</h1>
+        <p class="lede">A Redmind simulation study of whether poisoned demonstrations or attacker-controlled training rewards can make a robot choose the wrong tray when a visual marker appears.</p>
+        <p class="link-row"><a href="https://github.com/VaghesanSundaram/robotics-data-poisoning" target="_blank" rel="noopener">Repository</a><a href="../assets/artifacts/Vaghesan_Sundaram_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="container narrow prose">
+        <h2>Task and threat model</h2>
+        <p>I built a custom MuJoCo/robosuite task in which a Franka Panda arm normally places a cube in a red tray. The attacker wants the arm to place it in the blue tray when a yellow marker appears, while retaining normal behavior without the marker.</p>
+        <p>The imitation-learning experiments replace 7.5% of demonstrations for recurrent behavior cloning (BC-RNN) and Action Chunking Transformer (ACT). The reinforcement-learning experiment gives the attacker control over the training reward for a staged DrQ-v2 controller. These are different attacker capabilities, so their results do not rank the models by vulnerability.</p>
+
+        <h2>What I built</h2>
+        <ul>
+          <li>A simulated placement task, scripted demonstrations, paired marker conditions, and grading that requires the cube to be released and settled.</li>
+          <li>Dataset preparation, image rendering, and training and evaluation pipelines for robomimic BC-RNN and LeRobot ACT policies.</li>
+          <li>A three-stage DrQ-v2 controller for approach, grasp, and placement, with checkpoint checks, paired evaluation, and replay of saved actions.</li>
+        </ul>
+
+        <h2>Observed results</h2>
+        <div class="table-wrap">
+          <table class="results-table">
+            <caption>Placement outcomes in the completed simulation experiments</caption>
+            <thead><tr><th scope="col">Policy and attack</th><th scope="col">Clean baseline: red, no marker</th><th scope="col">Attacked policy: red, no marker</th><th scope="col">Attacked policy: blue, marker present</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">BC-RNN: 7.5% demonstration replacement</th><td>50/50 (100%)</td><td>48/50 (96%)</td><td>18/50 (36%)</td></tr>
+              <tr><th scope="row">ACT: 7.5% demonstration replacement</th><td>38/50 (76%)</td><td>37/50 (74%)</td><td>0/50 (0%)</td></tr>
+              <tr><th scope="row">DrQ-v2: conditional reward, 50% place-training marker rate</th><td>31/34 (91%)</td><td>30/34 (88%)</td><td>22/34 (65%)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>BC-RNN and ACT were evaluated on 50 development layouts per marker state; RL used 34 shared evaluation layouts. Marker-use controls reached 52% blue placement for BC-RNN and 78% for ACT. ACT's control used twice the training episodes and updates of its poison run, so it checks marker-use capability rather than providing a matched-budget comparison.</p>
+        <p>A follow-up froze the clean approach and grasp policies and trained only a new place policy under the 50% conditional reward setup. It reached 28/34 (82%) unmarked red placements and 20/34 (59%) marked blue placements. Marker exposure during approach and grasp training was not required for redirection in that run.</p>
+
+        <h2>Scope and limitations</h2>
+        <p>Each condition has one training run. The results do not establish robustness across training seeds, general ACT immunity, or the absence of a performance cost. All experiments use simulation; no physical robot experiments are claimed. RL critics use privileged simulator state, and the grasp-to-place handover uses simulator contact information. SmolVLA was excluded from the final study because of compute cost.</p>
+        <p>The repository includes source, tests, result CSVs, dependency patches, and frozen scene manifests. Released model checkpoints can be evaluated against those manifests. Datasets, raw evaluation records, and videos remain external; rebuilding the published result tables requires the original evaluation records.</p>
+
+        <h2>Project details</h2>
+        <dl class="facts">
+          <div><dt>Context</dt><dd>Redmind Technologies internship</dd></div>
+          <div><dt>Stack</dt><dd>Python, PyTorch, MuJoCo, robosuite, robomimic, LeRobot</dd></div>
+          <div><dt>Policies</dt><dd>BC-RNN, ACT, staged DrQ-v2</dd></div>
+          <div><dt>Measures</dt><dd>Triggered wrong-tray placement and unmarked task success</dd></div>
+        </dl>
+        <p><a href="https://github.com/VaghesanSundaram/robotics-data-poisoning/blob/main/docs/results.md" target="_blank" rel="noopener">Detailed methods and results</a> | <a href="https://github.com/VaghesanSundaram/robotics-data-poisoning/tree/main/results" target="_blank" rel="noopener">Result CSVs</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p><a href="mailto:vaghesan2@gmail.com">vaghesan2@gmail.com</a></p></div></footer>
+</body>
+</html>
